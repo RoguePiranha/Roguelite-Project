@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>game-idea</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="Game Idea_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Game Idea_files/libs/quarto-html/quarto.js"></script>
+<script src="Game Idea_files/libs/quarto-html/popper.min.js"></script>
+<script src="Game Idea_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Game Idea_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Game Idea_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Game Idea_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Game Idea_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Game Idea_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Game Idea_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="game-idea" class="level1">
+<h1><strong>Game Idea</strong></h1>
+<ul>
+<li>Roguelite</li>
+<li>Merge abilities/spells/items? (ie combining bow with fireball spell gives bow that shoots magic fire arrows, allow weird combos like bow with shield gen item traps hit enemy in shield bubble) the more combos the better</li>
+<li>RPG style leveling</li>
+<li>Different combat options (ranged, mid, close, spells, bows, swords, daggers, hand-to-hand)</li>
+<li>Armor and items</li>
+<li>Top-down</li>
+<li>character builder with stat points before game and ability selection</li>
+</ul>
+<section id="character-builder" class="level2">
+<h2 class="anchored" data-anchor-id="character-builder">Character Builder</h2>
+<ul>
+<li>Create Save Slot (Can save multiple characters. Each save slot will be unique so players can start fresh without losing their old character)</li>
+<li>Choose species (human, elf, dwarf, orc, etc) {Maybe add option to create custom species?} (each species has different stat bonuses and abilities)
+<ul>
+<li>Stat point effect is multiplied by species bonus (ie. orcs get 1.25x strength bonus, but -0.5x intelligence bonus)</li>
+<li>Species can be evolved into a new species after certain conditions are met (ie. orc can evolve into ogre after killing a certain number of enemies or something)</li>
+</ul></li>
+<li>Can opt to choose a class (This affects what abilities you have available to start and the gear you start with)
+<ul>
+<li>highlight suggested stats and abilities based on class choice</li>
+<li>Can choose to ignore class and set stats and abilities as desired (ie. warrior with high intelligence and wisdom)</li>
+<li>Class gives starting gear and starting ability options</li>
+<li>new starting abilities are unlocked during gameplay and can be swapped out after game over, gear is lost on death and each new game starts with new gear</li>
+</ul></li>
+<li>Choose ability (Max based on species)</li>
+<li>Choose stats (10 points to distribute)</li>
+<li>Choose name</li>
+<li>Save Character as template, can be used and adjusted in future games</li>
+</ul>
+</section>
+<section id="classes" class="level2">
+<h2 class="anchored" data-anchor-id="classes">Classes</h2>
+<ul>
+<li><strong>Warrior</strong> (Melee, Strength/Vitality)</li>
+<li><strong>Archer</strong> (Ranged, Agility/Dexterity)</li>
+<li><strong>Mage</strong> (Spells, Intelligence/Wisdom)</li>
+<li><strong>Rogue</strong> (Melee/Ranged, Agility/Dexterity)</li>
+<li><strong>Priest</strong> (Healer, Wisdom/Intelligence)</li>
+</ul>
+</section>
+<section id="stats" class="level2">
+<h2 class="anchored" data-anchor-id="stats">Stats</h2>
+<ul>
+<li>Stats start at 1, players get 10 points to distribute at start of game.</li>
+<li>Some weapons or abilities may require a certain amount of a stat to use.</li>
+<li>Some items will use different stats to determine effectiveness. (ie. sword damage scales with strength, bow damage scales with agility, small blade damage scales with agility)</li>
+</ul>
+<p><strong>Strength</strong> (Melee Damage Modifier, Carry Weight, Health (less than vitality))</p>
+<p><strong>Agility</strong> (Ranged Attack Range and Damage Modifier, Movement Speed, Dodge Chance (less than Dexterity))</p>
+<p><strong>Dexterity</strong> (Attack Speed, Accuracy, Movement Speed (less than agility))</p>
+<p><strong>Intelligence</strong> (Spell Damage Modifier, Spell Cooldown, Mana (less than Wisdom))</p>
+<p><strong>Wisdom</strong> (Mana, Mana Regen, Spell Cooldown (less than Intelligence))</p>
+<p><strong>Constitution</strong> (Health, Health Regen, Defense, Poison Resistance)</p>
+<p><strong>Luck</strong> (Critical Hit Chance, Item Drop Rate, Gold Drop Rate)</p>
+</section>
+<section id="abilities" class="level2">
+<h2 class="anchored" data-anchor-id="abilities">Abilities</h2>
+<ul>
+<li>Players start with 1 passive ability</li>
+<li>Abilities have powerful effects but can only have a few at a time.</li>
+<li>Can either find more in game (with trainers or consumables) or combine abilities to make new ones.
+<ul>
+<li>New abilities are saved and can be used in future games.</li>
+</ul></li>
+<li>Max of 3 for human characters, other species would have different limits.</li>
+<li>Can be upgraded with rare items or by combining with other abilities.</li>
+</ul>
+<section id="passive-examples" class="level3">
+<h3 class="anchored" data-anchor-id="passive-examples">Passive Examples</h3>
+<p><strong><em>Mana Circuitry</em></strong> (Rare) - Decrease spell Cooldown by percentage, increase mana regen</p>
+<p><strong><em>Dense Musculature</em></strong> (Rare) - Each point in strength is worth 1.5 points</p>
+<p><strong><em>Eagle Eye</em></strong> (Uncommon) - Increase ranged attack range, increase accuracy</p>
+<p><strong><em>Quick Reflexes</em></strong> (Common) - Increase dodge chance</p>
+<p><strong><em>Healing Aura</em></strong> (Uncommon) - Constant low grade self healing, increase active healing</p>
+<p><strong><em>Magic Resistance</em></strong> (Common) - Decrease magic damage taken (Weaker than specific resistances)</p>
+<p><strong><em>Poison Resistance</em></strong> (Uncommon) - Decrease poison damage taken</p>
+<p><strong><em>Adaptive Resistance</em></strong> (Legendary) - As player takes damage, resistance to that type of damage increases permanently</p>
+</section>
+</section>
+<section id="spells" class="level2">
+<h2 class="anchored" data-anchor-id="spells">Spells</h2>
+<ul>
+<li>Exactly what they sound like, use mana to cast.</li>
+<li>Can be combined with other spells or with abilities or items.</li>
+<li>If combined with item, will generally make a new item.</li>
+<li>If combined with another spell, will make a new spell.</li>
+</ul>
+<section id="spell-examples" class="level3">
+<h3 class="anchored" data-anchor-id="spell-examples">Spell Examples</h3>
+<p><strong><em>Fireball</em></strong> - Shoots a fireball</p>
+<p><strong><em>Ice Shard</em></strong> - Shoots an ice shard</p>
+<p><strong><em>Fireball</em></strong> + <strong><em>Ice Shard</em></strong> = <strong><em>Frostfireball</em></strong> - Shoots a blue fireball that does both fire and ice damage</p>
+<p><strong><em>Fireball</em></strong> + <strong>Dense Musculature</strong> = <strong>Fire Fist</strong> - Ability - Melee attacks deal fire damage</p>
+<p><strong><em>Fireball</em></strong> + <strong>Mana Circuitry</strong> = <strong>Fire Affinity</strong> - Passive - Fire spells deal more damage and cost less mana</p>
+</section>
+</section>
+<section id="items" class="level2">
+<h2 class="anchored" data-anchor-id="items">Items</h2>
+<ul>
+<li>Can be combined with abilities or spells to make new items.</li>
+<li>Can be combined with other items to make new items.</li>
+</ul>
+<section id="item-rarities" class="level3">
+<h3 class="anchored" data-anchor-id="item-rarities">Item rarities</h3>
+<ul>
+<li>Common - White</li>
+<li>Uncommon - Green</li>
+<li>Rare - Blue</li>
+<li>Epic - Purple</li>
+<li>Legendary - Orange</li>
+<li>Mythic - Red</li>
+<li>Godly - Gold</li>
+</ul>
+</section>
+<section id="item-attributes" class="level3">
+<h3 class="anchored" data-anchor-id="item-attributes">Item Attributes</h3>
+<section id="general-attributes" class="level4">
+<h4 class="anchored" data-anchor-id="general-attributes">General Attributes</h4>
+<ul>
+<li>Magic</li>
+<li>Arcane</li>
+<li><em>Elemental</em>
+<ul>
+<li>Earth</li>
+<li>Air</li>
+<li>Water</li>
+<li>Fire</li>
+<li>Poison</li>
+<li>Ice</li>
+<li>Lightning</li>
+<li>Holy</li>
+<li>Shadow</li>
+</ul></li>
+<li>Sharp</li>
+<li>Heavy</li>
+<li>Medium</li>
+<li>Light</li>
+<li>Fragile</li>
+<li>Cursed</li>
+<li>Blessed</li>
+</ul>
+</section>
+<section id="combining-attributes" class="level4">
+<h4 class="anchored" data-anchor-id="combining-attributes">Combining Attributes</h4>
+<ul>
+<li>Combining things with the same attribute will increase the attribute’s power (ie. <strong><em>Fireball</em></strong> + <strong><em>Fireball</em></strong> = <strong><em>Fireball+</em></strong> - Shoots a fireball that explodes into more fireballs)</li>
+<li>Combining things with different attributes will create a new attribute (ie. <strong><em>Fireball</em></strong> + <strong><em>Ice Shard</em></strong> = <strong><em>Frostfireball</em></strong> - Shoots a ball of blue fire that does both fire and ice damage)</li>
+<li>Some combinations create attributes that are more powerful than the sum of their parts (ie. Fire and Shadow combine to create Infernal, which does more damage of both types than normal or does a special effect of some kind)</li>
+</ul>
+</section>
+<section id="weapon-attributes" class="level4">
+<h4 class="anchored" data-anchor-id="weapon-attributes">Weapon Attributes</h4>
+<ul>
+<li>Magic - Does generic magic damage in addition to whatever else it does</li>
+<li>Arcane - Like magic, but more powerful</li>
+<li><em>Elemental</em>
+<ul>
+<li>Earth - Does earth damage in addition to whatever else it does</li>
+<li>Air - Does air damage in addition to whatever else it does</li>
+<li>Water - Does water damage in addition to whatever else it does</li>
+<li>Poison - Does poison damage in addition to whatever else it does</li>
+<li>Fire - Does fire damage in addition to whatever else it does</li>
+<li>Ice - Does ice damage in addition to whatever else it does</li>
+<li>Lightning - Does lightning damage in addition to whatever else it does</li>
+<li>Holy - Does holy damage in addition to whatever else it does</li>
+<li>Shadow - Does shadow damage in addition to whatever else it does</li>
+</ul></li>
+<li>Sharp - Increases critical hit chance</li>
+<li>Heavy - Heavier than normal, increases damage, decreases attack speed</li>
+<li>Light - Lighter than normal, increases attack speed, decreases damage</li>
+<li>Fragile - Does increased damage, but has a chance to break on hit</li>
+<li>Cursed - Increases damage, has medium chance to drain health or mana or something on hit</li>
+<li>Blessed - Increases damage, has medium chance to heal player on hit</li>
+</ul>
+</section>
+<section id="armor-attributes" class="level4">
+<h4 class="anchored" data-anchor-id="armor-attributes">Armor Attributes</h4>
+<ul>
+<li>Magic - Decrease generic magic damage taken</li>
+<li>Arcane - Like magic, but more powerful</li>
+<li><em>Elemental</em>
+<ul>
+<li>Earth - Decrease earth damage taken</li>
+<li>Air - Decrease air damage taken</li>
+<li>Water - Decrease water damage taken</li>
+<li>Poison - Decrease poison damage taken</li>
+<li>Fire - Decrease fire damage taken</li>
+<li>Ice - Decrease ice damage taken</li>
+<li>Lightning - Decrease lightning damage taken</li>
+<li>Holy - Decrease holy damage taken</li>
+<li>Shadow - Decrease shadow damage taken</li>
+</ul></li>
+<li>Heavy - Increases defense, decreases movement speed</li>
+<li>Medium - Average defense, average movement speed</li>
+<li>Light - Increases movement speed, decreases defense</li>
+<li>Fragile - Increases defense, but has a chance to break on hit</li>
+<li>Cursed - Increases defense, has medium chance to drain health or mana or something on hit</li>
+<li>Blessed - Increases defense, has medium chance to heal player on hit</li>
+</ul>
+</section>
+</section>
+<section id="item-examples" class="level3">
+<h3 class="anchored" data-anchor-id="item-examples">Item Examples</h3>
+<p><strong>Bow</strong> - Shoots arrows</p>
+<p><strong>Staff</strong> - Depending on staff, can decrease cooldown, decrease mana cost, increase spell damage, etc.</p>
+<p><strong>Shield Generator</strong> - Creates a shield that absorbs damage</p>
+<p><strong>Sword</strong> - Melee weapon (strength based)</p>
+<p><strong>Dagger</strong> - Melee weapon (dexterity based)</p>
+<p><strong>Holy Symbol</strong> - May increase healing done, decrease cooldown on healing spells, or something similar</p>
+</section>
+</section>
+<section id="combining" class="level2">
+<h2 class="anchored" data-anchor-id="combining">Combining</h2>
+<ul>
+<li>For spells and items, can be done in crafting menu</li>
+<li>For abilities, must find a place to combine them in game (ie. a shrine, a special room, etc) as these are saved and can be used in future games.</li>
+</ul>
+<section id="combining-examples" class="level3">
+<h3 class="anchored" data-anchor-id="combining-examples">Combining Examples</h3>
+<p><strong><em>Bow</em></strong> + <strong><em>Fireball</em></strong> = <strong><em>Fire Bow</em></strong> - Shoots fire arrows</p>
+<p><strong><em>Bow</em></strong> + <strong><em>Shield Generator</em></strong> = <strong><em>Bubble Bow</em></strong> - Shoots arrows that create a shield bubble on hit, trapping enemies inside until bubble is destroyed</p>
+<p><strong><em>Fireball</em></strong> + <strong><em>Ice Shard</em></strong> = <strong><em>Frostfireball</em></strong> - Shoots a blue fireball that does both fire and ice damage</p>
+<p><strong><em>Fireball</em></strong> + <strong>Dense Musculature</strong> = <strong>Fire Fist</strong> - Ability - Melee attacks deal fire damage</p>
+<p><strong><em>Fireball</em></strong> + <strong>Mana Circuitry</strong> = <strong>Fire Affinity</strong> - Passive - Fire spells deal more damage and cost less mana</p>
+<p><strong>Fire Affinity</strong> + <strong>Healing Aura</strong> = <strong>Holy Flame</strong> - Passive - Fire spells heal player for a percentage of damage dealt</p>
+<p><strong>Magic Resistance</strong> + <strong><em>Armor</em></strong> = <strong><em>Magic Armor</em></strong> - Item - Decrease magic damage taken, increase defense</p>
+<p><strong><em>Long Sword</em></strong> + <strong><em>Dagger</em></strong> = <strong><em>Rapier</em></strong> - Melee weapon (dexterity based, longer reach than dagger, faster than long sword)</p>
+<p><strong>Eagle Eye</strong> + <strong>Quick Reflexes</strong> = <strong>Sniper</strong> - Passive - Increase ranged attack range, increase accuracy, increase critical hit chance</p>
+</section>
+</section>
+<section id="gameplay" class="level2">
+<h2 class="anchored" data-anchor-id="gameplay">Gameplay</h2>
+<ul>
+<li>Top-down view</li>
+<li>Large Open World</li>
+<li>Omni-directional movement and aiming</li>
+<li>Defeating floor boss will unlock next floor via portal</li>
+<li>Start with basic gear and abilities</li>
+<li>Find new gear and abilities in chests, from enemies, or from trainers</li>
+<li>Set number of floors, can continue with procedurally generated floors after final floor</li>
+<li>Each level increases difficulty by increasing enemy health and damage, item rarity increases based on floor number</li>
+<li>NPCs appear less frequently as floor number increases and in smaller and smaller towns or villages</li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
