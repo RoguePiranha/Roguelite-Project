@@ -246,3 +246,6 @@
 - Each level increases difficulty by increasing enemy health and damage, item rarity increases based on floor number
 - NPCs appear less frequently as floor number increases and in smaller and smaller towns or villages
 - Chunk environment affects spell power ie fire is weak in rain, water is weak in volcano
+- A few key item slots that rotate equipped with wheel scroll or number keys. (Similar to Fortnite)
+  - As items and spells are found, they can be equipped in these slots.
+  - If you have an item or spell equipped in a slot and find a new one, you can choose to swap, combine, or send to inventory.
