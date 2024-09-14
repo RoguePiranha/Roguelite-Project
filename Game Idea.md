@@ -224,6 +224,16 @@
 
 **Eagle Eye** + **Quick Reflexes** = **Sniper** - Passive - Increase ranged attack range, increase accuracy, increase critical hit chance
 
+## Leveling
+
+- Spells and abilities level with use/ actions, player levels up primarily with kills.
+  - Maybe gets some xp for merging things and leveling spells.
+  - Not sure how abilities would level as they are passive.
+    - Maybe they level with use? (ie. ***Fire Affinity*** levels with fire spell use?)
+- Spells can evolve with level, choices offered for spell growth direction
+- Combining spells creates spell at lowest of two used, increase in rarity of spell always yields level 0 spell
+- Items have no level, combining with spell affects rarity, applies rarity between two used. Ie, common+rare yields uncommon, common+uncommon yields uncommon. Maybe assign point value to items to that effect? Ie, 1-5 is common, 6-10 is uncommon. Common 2 + Uncommon 6 is Common 4.
+
 ## Gameplay
 
 - Top-down view
@@ -235,3 +245,4 @@
 - Set number of floors, can continue with procedurally generated floors after final floor
 - Each level increases difficulty by increasing enemy health and damage, item rarity increases based on floor number
 - NPCs appear less frequently as floor number increases and in smaller and smaller towns or villages
+- Chunk environment affects spell power ie fire is weak in rain, water is weak in volcano
