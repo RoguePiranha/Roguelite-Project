@@ -8,6 +8,14 @@
 - Top-down
 - character builder with stat points before game and ability selection
 
+## Unlockables
+
+- Race (Human -> Manaborn, Start as human, elf, or Dwarf and unlock other races in playthrough)
+- Classes (Wizard -> Pyromancer or cryomancer or necromancer(needs max follower count))
+- Abilities
+- Library of items and spells that have been discovered with descriptions
+- Endless after winning level mode
+
 ## Character Builder
 
 - Create Save Slot (Can save multiple characters. Each save slot will be unique so players can start fresh without losing their old character)
