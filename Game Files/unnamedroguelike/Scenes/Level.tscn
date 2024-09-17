@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bm8sxl5vbbwaw"]
 
-[ext_resource type="TileSet" uid="uid://cytdmikxlhyem" path="res://Assets/Tile Set/Ground Tiles/ground_tiles.tres" id="1_06oq5"]
+[ext_resource type="TileSet" uid="uid://cytdmikxlhyem" path="res://Assets/Tile Set/ground_tiles.tres" id="1_06oq5"]
 
 [node name="Level" type="Node2D"]
 
