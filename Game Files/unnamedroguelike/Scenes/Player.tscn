@@ -1,22 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://dji34oggkb8b1"]
+[gd_scene load_steps=9 format=3 uid="uid://dji34oggkb8b1"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_hldmp"]
-[ext_resource type="Texture2D" uid="uid://1fvfnut5xwsh" path="res://Assets/PC Dude_Monster/Dude_Monster.png" id="2_18tj2"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_awbsm"]
-atlas = ExtResource("2_18tj2")
-region = Rect2(4, 4, 22, 29)
+[ext_resource type="Texture2D" uid="uid://bfyb8qjcf1hln" path="res://Assets/PC Dude_Monster/Dude_Monster_Idle_4.png" id="3_kofja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqer4"]
 size = Vector2(19, 7)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e23t"]
+atlas = ExtResource("3_kofja")
+region = Rect2(0, 5, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46i0l"]
+atlas = ExtResource("3_kofja")
+region = Rect2(32, 5, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxos5"]
+atlas = ExtResource("3_kofja")
+region = Rect2(64, 5, 32, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2ul3"]
+atlas = ExtResource("3_kofja")
+region = Rect2(96, 5, 32, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jwjrq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e23t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46i0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxos5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2ul3")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_hldmp")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -0.5)
-texture = SubResource("AtlasTexture_awbsm")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 10.5)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_xqer4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.065, 3.065)
+
+[node name="IdleAnimation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jwjrq")
+animation = &"new_animation"

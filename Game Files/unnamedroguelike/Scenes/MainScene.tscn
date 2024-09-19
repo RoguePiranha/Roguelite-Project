@@ -342,6 +342,3 @@ tile_set = SubResource("TileSet_cups2")
 
 [node name="Player" parent="." instance=ExtResource("1_kgkfv")]
 position = Vector2(616, 327)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3.065, 3.065)
