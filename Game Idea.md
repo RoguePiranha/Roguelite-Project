@@ -35,7 +35,7 @@
 ## Classes
 
 - **Warrior** (Melee, Strength/Vitality)
-- **Archer** (Ranged, Agility/Dexterity)
+- **Archer** (Ranged, Dexterity/Agility)
 - **Mage** (Spells, Intelligence/Wisdom)
 - **Rogue** (Melee/Ranged, Agility/Dexterity)
 - **Priest** (Healer, Wisdom/Intelligence)
