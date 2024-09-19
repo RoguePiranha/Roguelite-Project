@@ -39,6 +39,7 @@
 - **Mage** (Spells, Intelligence/Wisdom)
 - **Rogue** (Melee/Ranged, Agility/Dexterity)
 - **Priest** (Healer, Wisdom/Intelligence)
+- **No Class** (No Affinity, All Stats Equal)
 
 ## Stats
 
