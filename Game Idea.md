@@ -258,3 +258,4 @@
 - A few key item slots that rotate equipped with wheel scroll or number keys. (Similar to Fortnite)
   - As items and spells are found, they can be equipped in these slots.
   - If you have an item or spell equipped in a slot and find a new one, you can choose to swap, combine, or send to inventory.
+- End of game stats screen after death: kills, damage dealt, damage received, etc.
