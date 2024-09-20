@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 # Declare movement speed
-var speed = 200
+var speed = 1000
 
 # Get input from the player
 func get_input() -> Vector2:
