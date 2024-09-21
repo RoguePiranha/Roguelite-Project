@@ -119,7 +119,7 @@
 - Rare - Blue
 - Epic - Purple
 - Legendary - Orange
-- Mythic - Red
+- Mythic - Gold
 
 ### Item Attributes
 
