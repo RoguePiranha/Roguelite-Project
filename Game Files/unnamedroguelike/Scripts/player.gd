@@ -1,70 +1,50 @@
 extends CharacterBody2D
 
-# Movement variables
-var speed = 300
-var acceleration = 800
-var deceleration = 600
+# Movement and attack variables
 var is_attacking = false
 
-# References to animation nodes
-var walking_right: AnimatedSprite2D = $WalkRight
-var walking_left: AnimatedSprite2D = $WalkLeft
-var idle: AnimatedSprite2D = $IdleAnimation
+# Load the Movement script
+var movement = preload("res://Scripts/Characters/CharMovement.gd").new()
+var character_stats = preload("res://Scripts/Characters/CharStats.gd").new()
+
+# Player stats
+var strength: float
+var constitution: float
+var agility: float
+var dexterity: float
+var intelligence: float
+var wisdom: float
+var charisma: float
 
 func _ready():
-	# Start with the idle animation
-	show_idle()
+	# Assign the Walking and Idle AnimatedSprite2D nodes to the movement script
+	movement.walking_right = $WalkRight
+	movement.walking_left = $WalkLeft
+	movement.idle = $IdleAnimation
 
-# Get input from the player
-func get_input() -> Vector2:
-	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	# Initialize player stats (example race: human, class: warrior)
+	var final_stats = character_stats.calculate_final_stats("elf", "wanderer")
+	strength = round(final_stats["strength"])
+	constitution = round(final_stats["constitution"])
+	agility = round(final_stats["agility"])
+	dexterity = round(final_stats["dexterity"])
+	intelligence = round(final_stats["intelligence"])
+	wisdom = round(final_stats["wisdom"])
+	charisma = round(final_stats["charisma"])
+
+	# Adjust speed based on agility stat
+	movement.speed = 300 * (agility / 10.0)
+
+	# Start with the idle animation
+	movement.show_idle()
 
 func _physics_process(delta):
-	var input_direction = get_input()
+	# Use movement script to handle movement and animation
+	velocity = movement.apply_movement(delta)  # Use built-in velocity
 
-	# Apply movement logic with acceleration and deceleration
-	if input_direction != Vector2.ZERO:
-		velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
-	else:
-		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
-
-	# Move the player
+	# Move the player using the built-in velocity
 	move_and_slide()
 
-	# Update animations based on movement
-	if is_attacking:
-		# Add your attack logic here
-		pass
-	elif velocity.length() > 0.1:
-		if velocity.x > 0:
-			show_walking_right()
-		elif velocity.x < 0:
-			show_walking_left()
-		else:
-			show_idle()
-	else:
-		show_idle()
-
-# Function to show walking right animation
-func show_walking_right():
-	idle.visible = false
-	walking_left.visible = false
-	walking_right.visible = true
-	if !walking_right.is_playing():
-		walking_right.play("Walking Right")
-
-# Function to show walking left animation
-func show_walking_left():
-	idle.visible = false
-	walking_right.visible = false
-	walking_left.visible = true
-	if !walking_left.is_playing():
-		walking_left.play("Walking Left")
-
-# Function to show idle animation
-func show_idle():
-	walking_right.visible = false
-	walking_left.visible = false
-	idle.visible = true
-	if !idle.is_playing():
-		idle.play("Idle")
+	# Update animations
+	movement.is_attacking = is_attacking  # Pass the current attacking state to movement
+	movement.update_animations()
