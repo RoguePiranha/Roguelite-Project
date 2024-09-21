@@ -35,10 +35,10 @@
 ## Classes
 
 - **Warrior** (Melee, Strength/Constitution)
-- **Archer** (Ranged, Dexterity/Constitution)
+- **Archer** (Ranged, Dexterity/Agility)
 - **Mage** (Spells, Intelligence/Wisdom)
 - **Rogue** (Melee/Ranged, Dexterity/Charisma)
-- **Priest** (Healer, Charisma/Wisdom)
+- **Priest** (Healer, Wisdom/Charisma)
 - **Wanderer** (No Affinity, All Stats Equal)
 
 ## Stats
@@ -51,15 +51,15 @@
 
 **Constitution** (Health, Health Regen, Defense, Resistances, Knockback Resistance)
 
-**Agility** (Movement Speed, Dodge Rate, Stealth Modifier)
+**Agility** (Movement Speed, Passive Dodge Rate (Diminishing returns, set max), Stealth Modifier)
 
-**Dexterity** (Attack Speed, Accuracy (Counters dodge rate), Small Blade Damage Modifier, Ranged Damage Modifier)
+**Dexterity** (Attack Speed, Accuracy (Counters dodge rate), Critical Hit Rate (Diminishing returns, set max), Small Blade Damage Modifier, Ranged Damage Modifier)
 
-**Intelligence** (Spell Damage Modifier, Spell Cooldown, Spell Count Limits, Mana, Mana Regen)
+**Intelligence** (Magic Spell Damage Modifier, Magic Spell Cooldown, Magic Spell Count Limits, Mana, Mana Regen, Magic Spell Penetration (Counters Resistance to a degree))
 
-**Wisdom** (Spell Resistance, Spell Cooldown, Faith Based Spell Count Limits, Holy Damage Modifier, Healing Modifier)
+**Wisdom** (Magic Resistance, Faith Spell Cooldown, Faith Spell Count Limits, Holy Damage Modifier, Healing Modifier, Faith, Faith Regen)
 
-**Charisma** (NPC Interaction Modifier, Merchant Prices, Follower Count Limits, Follower Blessing Modifier)
+**Charisma** (NPC Interaction Modifier, Merchant Prices, Follower Count Limits, Follower Blessing Modifier (Buffs Followers))
 
 ## Abilities
 
@@ -120,7 +120,6 @@
 - Epic - Purple
 - Legendary - Orange
 - Mythic - Red
-- Godly - Gold
 
 ### Item Attributes
 
@@ -170,8 +169,8 @@
 - Heavy - Heavier than normal, increases damage, decreases attack speed
 - Light - Lighter than normal, increases attack speed, decreases damage
 - Fragile - Does increased damage, but has a chance to break on hit
-- Cursed - Increases damage, has medium chance to drain health or mana or something on hit
-- Blessed - Increases damage, has medium chance to heal player on hit
+- Cursed - Increases damage, has chance to drain health or mana or something on hit
+- Blessed - Increases damage, has chance to heal player on hit
 
 #### Armor Attributes
 
@@ -191,8 +190,8 @@
 - Medium - Average defense, average movement speed
 - Light - Increases movement speed, decreases defense
 - Fragile - Increases defense, but has a chance to break on hit
-- Cursed - Increases defense, has medium chance to drain health or mana or something on hit
-- Blessed - Increases defense, has medium chance to heal player on hit
+- Cursed - Increases defense, has chance to drain health or mana or something on hit
+- Blessed - Increases defense, has chance to heal player on hit
 
 ### Item Examples
 
