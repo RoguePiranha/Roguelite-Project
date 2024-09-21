@@ -34,32 +34,32 @@
 
 ## Classes
 
-- **Warrior** (Melee, Strength/Vitality)
-- **Archer** (Ranged, Dexterity/Agility)
+- **Warrior** (Melee, Strength/Constitution)
+- **Archer** (Ranged, Dexterity/Constitution)
 - **Mage** (Spells, Intelligence/Wisdom)
-- **Rogue** (Melee/Ranged, Agility/Dexterity)
-- **Priest** (Healer, Wisdom/Intelligence)
-- **No Class** (No Affinity, All Stats Equal)
+- **Rogue** (Melee/Ranged, Dexterity/Charisma)
+- **Priest** (Healer, Charisma/Wisdom)
+- **Wanderer** (No Affinity, All Stats Equal)
 
 ## Stats
 
-- Stats start at 1, players get 10 points to distribute at start of game.
+- Stats start at 1 , players get 10 points to distribute at start of game.
 - Some weapons or abilities may require a certain amount of a stat to use.
-- Some items will use different stats to determine effectiveness. (ie. sword damage scales with strength, bow damage scales with agility, small blade damage scales with agility)
+- Some items will use different stats to determine effectiveness. (ie. sword damage scales with strength, bow damage scales with dexterity, spell damage scales with intelligence)
 
-**Strength** (Melee Damage Modifier, Carry Weight, Health (less than vitality))
+**Strength** (Melee Damage Modifier, Carry Limits, Knockback)
 
-**Agility** (Ranged Attack Range and Damage Modifier, Movement Speed, Dodge Chance (less than Dexterity))
+**Constitution** (Health, Health Regen, Defense, Resistances, Knockback Resistance)
 
-**Dexterity** (Attack Speed, Accuracy, Movement Speed (less than agility))
+**Agility** (Movement Speed, Dodge Rate, Stealth Modifier)
 
-**Intelligence** (Spell Damage Modifier, Spell Cooldown, Mana (less than Wisdom))
+**Dexterity** (Attack Speed, Accuracy (Counters dodge rate), Small Blade Damage Modifier, Ranged Damage Modifier)
 
-**Wisdom** (Mana, Mana Regen, Spell Cooldown (less than Intelligence))
+**Intelligence** (Spell Damage Modifier, Spell Cooldown, Spell Count Limits, Mana, Mana Regen)
 
-**Constitution** (Health, Health Regen, Defense, Poison Resistance)
+**Wisdom** (Spell Resistance, Spell Cooldown, Faith Based Spell Count Limits, Holy Damage Modifier, Healing Modifier)
 
-**Luck** (Critical Hit Chance, Item Drop Rate, Gold Drop Rate)
+**Charisma** (NPC Interaction Modifier, Merchant Prices, Follower Count Limits, Follower Blessing Modifier)
 
 ## Abilities
 
