@@ -211,6 +211,7 @@
 
 - For spells and items, can be done in crafting menu
 - For abilities, must find a place to combine them in game (ie. a shrine, a special room, etc) as these are saved and can be used in future games.
+- For Weapons, can only be combined at an anvil or forge.
 
 ### Combining Examples
 
