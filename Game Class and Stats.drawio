@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
   <diagram name="Page-1" id="0Z3T1p2_KEFDvT1Kg05W">
-    <mxGraphModel dx="5385" dy="2890" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2874" dy="1636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1891,7 +1891,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-316" value="Spellsword" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="4040" y="650" width="120" height="80" as="geometry" />
+          <mxGeometry x="4430" y="650" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-424" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="yrAmuNWufyrD30hrC2M3-317" target="yrAmuNWufyrD30hrC2M3-416">
           <mxGeometry relative="1" as="geometry" />
@@ -1924,7 +1924,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-356" value="Elementalist" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3720" y="650" width="120" height="80" as="geometry" />
+          <mxGeometry x="4110" y="650" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-359" value="Monk" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="4700" y="653" width="120" height="80" as="geometry" />
@@ -1936,19 +1936,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-361" value="{TYPE} Elementalist" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3720" y="449.5" width="120" height="80" as="geometry" />
+          <mxGeometry x="4110" y="449.5" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-364" value="The Primordial {TYPE}&amp;nbsp;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3720" y="-144" width="120" height="80" as="geometry" />
+          <mxGeometry x="4110" y="-144" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-369" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="yrAmuNWufyrD30hrC2M3-367" target="yrAmuNWufyrD30hrC2M3-368">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-367" value="Void Elementalist" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3570" y="256" width="120" height="80" as="geometry" />
+          <mxGeometry x="3960" y="256" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-368" value="Aetherlord" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3570" y="-144" width="120" height="80" as="geometry" />
+          <mxGeometry x="3960" y="-144" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-372" value="Paladin" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="3170" y="653" width="120" height="80" as="geometry" />
@@ -2049,7 +2049,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="3406" y="750" />
-              <mxPoint x="4330" y="750" />
+              <mxPoint x="4760" y="750" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -2078,16 +2078,16 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-287" value="Mage Apprentice" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3878" y="850" width="120" height="80" as="geometry" />
+          <mxGeometry x="4268" y="850" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-295" value="Mage" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3878" y="449.5" width="120" height="80" as="geometry" />
+          <mxGeometry x="4268" y="449.5" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-325" value="Arcanist" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3878" y="252.5" width="120" height="80" as="geometry" />
+          <mxGeometry x="4268" y="252.5" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-338" value="Archmage" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3878" y="-144" width="120" height="80" as="geometry" />
+          <mxGeometry x="4268" y="-144" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-303" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="yrAmuNWufyrD30hrC2M3-287" target="yrAmuNWufyrD30hrC2M3-295">
           <mxGeometry relative="1" as="geometry" />
@@ -2120,16 +2120,16 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-383" value="Arcane Swordsman" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="4040" y="448" width="120" height="80" as="geometry" />
+          <mxGeometry x="4430" y="448" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-385" value="Mystic Blademaster" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="4040" y="256" width="120" height="80" as="geometry" />
+          <mxGeometry x="4430" y="256" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-387" value="Kill an enemy with a sword" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="4040" y="890" width="170" height="30" as="geometry" />
+          <mxGeometry x="4405" y="895" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-388" value="Learn 2 elemental spells before lvl 5" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="3680" y="830" width="220" height="30" as="geometry" />
+          <mxGeometry x="4070" y="817" width="220" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-390" value="&lt;font style=&quot;font-size: 36px;&quot;&gt;Legendary&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1310" y="-147" width="190" height="60" as="geometry" />
@@ -2138,7 +2138,7 @@
           <mxGeometry x="1320" y="-91" width="170" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-393" value="Punch an enemy to death" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="4170" y="720" width="160" height="30" as="geometry" />
+          <mxGeometry x="4606" y="745" width="160" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-396" value="Ranger" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="2020" y="650" width="120" height="80" as="geometry" />
@@ -2150,16 +2150,16 @@
           <mxGeometry x="1600" y="650" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-402" value="Voidborn" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3570" y="54" width="120" height="80" as="geometry" />
+          <mxGeometry x="3960" y="54" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-403" value="Necromancer" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="3624" y="1052.5" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-404" value="Necromancer" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="3490" y="648" width="120" height="80" as="geometry" />
+          <mxGeometry x="3880" y="648" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-406" value="Resurrect body at {EVIL THING}&lt;div&gt;using HAND (Hand becomes pet)&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="3536" y="885" width="200" height="40" as="geometry" />
+          <mxGeometry x="3820" y="885" width="200" height="40" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-407" value="Knight" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="2990" y="449.5" width="120" height="80" as="geometry" />
@@ -2192,12 +2192,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-420" value="Harbinger of Doom" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="5030" y="53.5" width="120" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="yrAmuNWufyrD30hrC2M3-421" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="yrAmuNWufyrD30hrC2M3-420">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="4630" y="252.5" as="sourcePoint" />
-          </mxGeometry>
+          <mxGeometry x="5030" y="-144" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-422" value="Paragon of Darkness" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="5030" y="-354" width="120" height="80" as="geometry" />
