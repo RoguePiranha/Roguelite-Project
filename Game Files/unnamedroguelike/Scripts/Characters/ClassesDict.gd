@@ -30,7 +30,7 @@ var class_data = {
 		"wisdom": 1,
 		"charisma": 3
 		},
-	"rouge": {
+	"rogue": {
 		"strength": 2, 
 		"constitution": 3,
 		"agility": 6, 
@@ -61,3 +61,6 @@ var class_data = {
 
 func get_class_stats(classes_name: String) -> Dictionary:
 	return class_data.get(classes_name, {})
+
+func get_available_classes() -> Array:
+	return class_data.keys()

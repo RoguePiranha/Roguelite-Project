@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo0ugvowthkvy"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/CharSelection.gd" id="1_t1k7h"]
+
+[node name="CharacterSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_t1k7h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "CHARACTER SELECTION"
+horizontal_alignment = 1
+
+[node name="RaceRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Race" type="Label" parent="VBoxContainer/RaceRow"]
+layout_mode = 2
+text = "RACE: "
+
+[node name="RaceNames" type="HBoxContainer" parent="VBoxContainer/RaceRow"]
+layout_mode = 2
+
+[node name="ClassRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Class" type="Label" parent="VBoxContainer/ClassRow"]
+layout_mode = 2
+text = "CLASS:"
+
+[node name="ClassNames" type="HBoxContainer" parent="VBoxContainer/ClassRow"]
+layout_mode = 2
+
+[node name="ButtonStartGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "START GAME"
