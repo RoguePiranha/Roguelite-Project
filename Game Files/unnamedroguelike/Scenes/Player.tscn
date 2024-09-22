@@ -139,7 +139,7 @@ shape = SubResource("RectangleShape2D_xqer4")
 [node name="IdleAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jwjrq")
 animation = &"idle"
-frame_progress = 0.885799
+frame_progress = 0.960584
 
 [node name="WalkLeft" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -150,10 +150,10 @@ animation = &"walk_right"
 visible = false
 sprite_frames = SubResource("SpriteFrames_jwjrq")
 animation = &"walk_right"
-frame_progress = 0.62986
+frame_progress = 0.704644
 
 [node name="Attack" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_jwjrq")
 animation = &"attack"
-frame_progress = 0.872918
+frame_progress = 0.9477
