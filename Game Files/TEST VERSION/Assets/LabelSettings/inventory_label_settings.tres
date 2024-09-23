@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dfr665dtxuhfj"]
+
+[ext_resource type="FontFile" uid="uid://ch1f4c4cvs1uw" path="res://Fonts/FiraCode-Regular.ttf" id="1_4j4vx"]
+
+[resource]
+font = ExtResource("1_4j4vx")
+font_size = 40
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)

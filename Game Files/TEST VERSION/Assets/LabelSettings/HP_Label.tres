@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://6a8ty4ieh617"]
+
+[ext_resource type="FontFile" uid="uid://ch1f4c4cvs1uw" path="res://Fonts/FiraCode-Regular.ttf" id="1_iosyc"]
+
+[resource]
+font = ExtResource("1_iosyc")
+font_size = 20
+font_color = Color(0.820775, 0, 0.0685057, 1)

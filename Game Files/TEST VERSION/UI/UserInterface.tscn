@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh6tt3jwpkrcs"]
+
+[ext_resource type="LabelSettings" uid="uid://6a8ty4ieh617" path="res://Assets/LabelSettings/HP_Label.tres" id="1_jlpcb"]
+[ext_resource type="LabelSettings" uid="uid://cj2nogx4w6ft6" path="res://Assets/LabelSettings/MP_Label.tres" id="2_2n0yi"]
+[ext_resource type="Texture2D" uid="uid://k053v8rh5a1c" path="res://Assets/Tile Set/Inventory/inventorySlot.png" id="3_j41gt"]
+[ext_resource type="LabelSettings" uid="uid://dfr665dtxuhfj" path="res://Assets/LabelSettings/inventory_label_settings.tres" id="4_w4rin"]
+[ext_resource type="PackedScene" uid="uid://dqptnvvi8ihqu" path="res://UI/miniMap.tscn" id="5_3pfgv"]
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HPBar" type="ProgressBar" parent="."]
+layout_mode = 1
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 447.0
+offset_bottom = 25.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HPBar"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -2.0
+offset_right = 14.0
+offset_bottom = 21.0
+text = "HP"
+label_settings = ExtResource("1_jlpcb")
+
+[node name="MPBar" type="ProgressBar" parent="."]
+layout_mode = 1
+offset_left = 47.0
+offset_top = 30.0
+offset_right = 447.0
+offset_bottom = 50.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label2" type="Label" parent="MPBar"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -2.0
+offset_right = 14.0
+offset_bottom = 21.0
+text = "MP"
+label_settings = ExtResource("2_2n0yi")
+
+[node name="ItemSlotsContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -272.0
+offset_top = -100.0
+offset_right = 324.0
+offset_bottom = 96.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.430388, 0.430388)
+
+[node name="TextureRect" type="TextureRect" parent="ItemSlotsContainer"]
+layout_mode = 2
+texture = ExtResource("3_j41gt")
+
+[node name="Label" type="Label" parent="ItemSlotsContainer/TextureRect"]
+layout_mode = 0
+offset_left = 74.3516
+offset_top = 155.673
+offset_right = 114.352
+offset_bottom = 205.673
+text = "1"
+label_settings = ExtResource("4_w4rin")
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ItemSlotsContainer"]
+layout_mode = 2
+texture = ExtResource("3_j41gt")
+
+[node name="Label2" type="Label" parent="ItemSlotsContainer/TextureRect2"]
+layout_mode = 0
+offset_left = 78.8184
+offset_top = 155.673
+offset_right = 118.818
+offset_bottom = 205.673
+text = "2"
+label_settings = ExtResource("4_w4rin")
+horizontal_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="ItemSlotsContainer"]
+layout_mode = 2
+texture = ExtResource("3_j41gt")
+
+[node name="Label3" type="Label" parent="ItemSlotsContainer/TextureRect3"]
+layout_mode = 0
+offset_left = 83.285
+offset_top = 155.673
+offset_right = 123.285
+offset_bottom = 205.673
+text = "3"
+label_settings = ExtResource("4_w4rin")
+horizontal_alignment = 1
+
+[node name="SubViewportContainer" parent="." instance=ExtResource("5_3pfgv")]
+layout_mode = 1
+offset_left = -176.0
+offset_top = 16.0
+offset_right = 24.0001
+offset_bottom = 216.0
+scale = Vector2(0.784742, 0.784742)
