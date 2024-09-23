@@ -3,7 +3,7 @@ extends Node
 # Movement variables
 var speed = 300
 var acceleration = 800
-var deceleration = 600
+var deceleration = 1200
 
 # Animation references (to be passed in)
 var walking_right: AnimatedSprite2D
@@ -19,7 +19,7 @@ func get_input() -> Vector2:
 	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
 # Apply movement logic based on input
-func apply_movement(delta: float):
+func apply_movement(delta: float, is_colliding: bool) -> Vector2:
 	var input_direction = get_input()
 
 	# Apply movement logic with acceleration and deceleration
@@ -27,6 +27,10 @@ func apply_movement(delta: float):
 		velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
+		
+	# Stops movement if the player hits a wall or something
+	if is_colliding:
+		velocity = Vector2.ZERO
 
 	# Move the player (the caller will need to handle this)
 	return velocity

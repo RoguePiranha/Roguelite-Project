@@ -50,12 +50,28 @@ func add_class_button(classes_name: String):
 # Race selection function
 func _on_race_selected(race: String):
 	selected_race = race
+	update_race_button_highlight(race)
 	print("Selected race: " + race)
 
 # Class selection function
 func _on_class_selected(classes_name: String):
 	selected_class = classes_name
+	update_class_button_highlight(classes_name)
 	print("Selected class: " + classes_name)
+	
+func update_race_button_highlight(selected_race: String):
+	for button in $VBoxContainer/RaceRow/RaceNames.get_children():
+		if button.text.to_lower() == selected_race:
+			button.add_theme_color_override("font_color", Color(1, 1, 0))  # Highlight the selected button
+		else:
+			button.add_theme_color_override("font_color", Color(1, 1, 1))  # Reset others
+			
+func update_class_button_highlight(selected_class: String):
+	for button in $VBoxContainer/ClassRow/ClassNames.get_children():
+		if button.text.to_lower() == selected_class:
+			button.add_theme_color_override("font_color", Color(1, 1, 0))  # Highlight the selected button
+		else:
+			button.add_theme_color_override("font_color", Color(1, 1, 1))  # Reset others
 
 # Start game function
 func _on_start_game():

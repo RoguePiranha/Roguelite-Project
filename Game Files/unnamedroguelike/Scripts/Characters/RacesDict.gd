@@ -46,7 +46,7 @@ var race_data = {
 		"dexterity_mult": 1.2, 
 		"intelligence_mult": 0.7, 
 		"wisdom_mult": 0.8,
-		"charisma_mult": 0.5
+		"charisma_mult": 0.4
 	},
 	"kobold": {
 		"strength_mult": 0.7, 
