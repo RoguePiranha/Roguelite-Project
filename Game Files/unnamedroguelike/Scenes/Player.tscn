@@ -134,20 +134,3 @@ shape = SubResource("RectangleShape2D_xqer4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jwjrq")
 animation = &"attack"
-
-[node name="WalkLeft" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_jwjrq")
-animation = &"attack"
-flip_h = true
-
-[node name="WalkRight" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_jwjrq")
-animation = &"attack"
-
-[node name="Attack" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_jwjrq")
-animation = &"attack"
-frame_progress = 0.9477
