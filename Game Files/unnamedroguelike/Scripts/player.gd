@@ -33,15 +33,14 @@ func _ready():
 		selected_class = Global.selected_class
 		
 	# Retrieve race and class from Global
-	#selected_race = Global.selected_race
-	#selected_class = Global.selected_class
+	# selected_race = Global.selected_race
+	# selected_class = Global.selected_class
 	
 	print("Player race: " + selected_race + ", Player class: " + selected_class)
 	
 	# Assign the Walking and Idle AnimatedSprite2D nodes to the movement script
-	movement.walking_right = $WalkRight
-	movement.walking_left = $WalkLeft
-	movement.idle = $IdleAnimation
+	movement.animated_sprite = $AnimatedSprite2D
+
 
 	# Initialize player stats based on race and class
 	var final_stats = character_stats.calculate_final_stats(selected_race, selected_class)
@@ -54,9 +53,6 @@ func _ready():
 	#REMOVE THIS AT SOME POINT ^
 	
 	assign_stats(final_stats)
-
-	# Adjust speed based on agility stat
-	movement.speed = 300 * (agility / 10.0)
 
 	# Start with the idle animation
 	movement.show_idle()
@@ -89,9 +85,6 @@ func apply_stat_points(points_to_distribute: Dictionary):
 	var final_stats = character_stats.distribute_stat_points(points_to_distribute)
 	assign_stats(final_stats)
 
-	# Adjust speed based on new agility stat
-	movement.speed = 300 * (agility / 10.0)
-
 # Function to update race and class mid-game if necessary
 func update_race_and_class():
 	# Retrieve updated race and class from Global
@@ -109,8 +102,5 @@ func update_race_and_class():
 	intelligence = round(final_stats["intelligence"])
 	wisdom = round(final_stats["wisdom"])
 	charisma = round(final_stats["charisma"])
-
-	# Adjust speed based on agility stat
-	movement.speed = 300 * (agility / 10.0)
 
 	# Apply any other necessary changes based on the updated race and class

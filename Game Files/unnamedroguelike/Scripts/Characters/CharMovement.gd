@@ -1,18 +1,20 @@
 extends Node
 
-# Movement variables
-var speed = 300
-var acceleration = 800
-var deceleration = 1200
+var character_stats = preload("res://Scripts/Characters/ClassesDict.gd").new()
 
-# Animation references (to be passed in)
-var walking_right: AnimatedSprite2D
-var walking_left: AnimatedSprite2D
-var idle: AnimatedSprite2D
+# Movement variables
+var warriorStats = character_stats.get_class_stats("warrior")
+var speed = (35 * warriorStats["agility"])
+var acceleration = 800
+var deceleration = 500 * (warriorStats["agility"] * 0.01)
+
+# Animation reference (single AnimatedSprite2D node)
+var animated_sprite: AnimatedSprite2D
 
 # External states
 var is_attacking = false
 var velocity = Vector2()
+var last_horizontal_direction = 1  # 1 for right, -1 for left
 
 # Get input from the player
 func get_input() -> Vector2:
@@ -21,16 +23,20 @@ func get_input() -> Vector2:
 # Apply movement logic based on input
 func apply_movement(delta: float, is_colliding: bool) -> Vector2:
 	var input_direction = get_input()
+	print(deceleration)
+	print(velocity)
 
 	# Apply movement logic with acceleration and deceleration
 	if input_direction != Vector2.ZERO:
 		velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
+		velocity *= .95
 		
 	# Stops movement if the player hits a wall or something
 	if is_colliding:
-		velocity = Vector2.ZERO
+		velocity = Vector2(0,0)
+		velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
 
 	# Move the player (the caller will need to handle this)
 	return velocity
@@ -39,39 +45,32 @@ func apply_movement(delta: float, is_colliding: bool) -> Vector2:
 func update_animations():
 	if is_attacking:
 		# Add attack logic here if needed
+		animated_sprite.flip_h = last_horizontal_direction == -1
+		show_attack()
 		return
 	
-	if velocity.length() > 0.1:
-		if velocity.x > 0:
-			show_walking_right()
-		elif velocity.x < 0:
-			show_walking_left()
+	if velocity.length() > 0:
+		if velocity.x != 0:
+			last_horizontal_direction = sign(velocity.x)
+		# Flip the sprite based on last_horizontal_direction
+		animated_sprite.flip_h = last_horizontal_direction == -1
+		show_walking()
 	else:
+		# Maintain the flip direction when idle
+		animated_sprite.flip_h = last_horizontal_direction == -1
 		show_idle()
 
-# Function to show walking right animation
-func show_walking_right():
-	idle.visible = false
-	walking_left.visible = false
-	if !walking_right.visible:
-		walking_right.visible = true
-	if walking_right.animation != "walk_right" or !walking_right.is_playing():
-		walking_right.play("walk_right")
-
-# Function to show walking left animation
-func show_walking_left():
-	idle.visible = false
-	walking_right.visible = false
-	if !walking_left.visible:
-		walking_left.visible = true
-	if walking_left.animation != "walk_left" or !walking_left.is_playing():
-		walking_left.play("walk_left")
+# Function to show walking animation
+func show_walking():
+	if animated_sprite.animation != "walk" or !animated_sprite.is_playing():
+		animated_sprite.play("walk")
 
 # Function to show idle animation
 func show_idle():
-	walking_right.visible = false
-	walking_left.visible = false
-	if !idle.visible:
-		idle.visible = true
-	if !idle.is_playing():
-		idle.play("idle")
+	if animated_sprite.animation != "idle" or !animated_sprite.is_playing():
+		animated_sprite.play("idle")
+
+# Function to show attack animation (if needed)
+func show_attack():
+	if animated_sprite.animation != "attack" or !animated_sprite.is_playing():
+		animated_sprite.play("attack")

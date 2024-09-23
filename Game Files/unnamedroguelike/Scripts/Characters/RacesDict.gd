@@ -2,6 +2,7 @@ extends Node
 
 class_name Races
 
+
 var race_data = {
 	"human": {
 		"strength_mult": 1.0, 

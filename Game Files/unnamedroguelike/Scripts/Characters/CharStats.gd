@@ -9,12 +9,12 @@ var classes = preload("res://Scripts/Characters/ClassesDict.gd").new()
 var class_base_stats = {}
 var race_multipliers = {}
 
-func calculate_final_stats(race_name: String, classes_name: String) -> Dictionary:
+func calculate_final_stats(race_name: String, className: String) -> Dictionary:
 	var final_stats = {}
 	
 	#retrieves race and class multipliers
 	race_multipliers = races.get_race_multiplier(race_name)
-	class_base_stats = classes.get_class_stats(classes_name)
+	class_base_stats = classes.get_class_stats(className)
 	
 	#calculates final stats
 	for stat in class_base_stats.keys():
