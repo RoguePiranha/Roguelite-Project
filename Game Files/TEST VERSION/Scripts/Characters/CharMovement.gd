@@ -2,12 +2,21 @@ extends Node
 
 var character_stats = preload("res://Scripts/Characters/ClassesDict.gd").new()
 
-# Movement variables
-var warriorStats = character_stats.get_class_stats("warrior")
-var speed = (35 * warriorStats["agility"])
-var acceleration = 800
-var deceleration = 500 * (warriorStats["agility"] * 0.01)
+var selected_race = ""
+var selected_class = ""
 
+# Animation state (to hold specific animations for the selected race and class)
+var current_animations
+
+# Movement variabl
+var acceleration = 800
+var deceleration = 3200
+var base_speed = 100
+var speed_multiplier = 5
+var agility: float
+var speed: float
+
+	
 # Animation reference (single AnimatedSprite2D node)
 var animated_sprite: AnimatedSprite2D
 
@@ -16,6 +25,28 @@ var is_attacking = false
 var velocity = Vector2()
 var last_horizontal_direction = -1  # 1 for right, -1 for left
 
+func init(race: String, className: String):
+	# Ensure selected race and class are initialized from Global
+	selected_race = Global.selected_race
+	selected_class = Global.selected_class
+
+	# Load specific animations based on race and class
+	current_animations = "res://Animations/Character/"+ selected_race.capitalize() + "/" + selected_class.capitalize() + "/Animations.tres"
+	var spriteFrames = load(current_animations)
+	animated_sprite.frames = spriteFrames
+	if current_animations.is_empty():
+		print("Error: No animations found for " + selected_race + ", " + selected_class)
+	else:
+		print("Animations successfully loaded for " + selected_race + ", " + selected_class)
+		
+func set_sprite(sprite: AnimatedSprite2D):
+	animated_sprite = sprite
+	if animated_sprite:
+		print("AnimatedSprite2D set successfully.")
+	else:
+		print("Error: AnimatedSprite2D node not found!")
+		
+
 # Get input from the player
 func get_input() -> Vector2:
 	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -23,9 +54,8 @@ func get_input() -> Vector2:
 # Apply movement logic based on input
 func apply_movement(delta: float) -> Vector2:
 	var input_direction = get_input()
-	print(deceleration)
-	print(velocity)
-
+	speed = base_speed + (agility * speed_multiplier)
+	
 	# Apply movement logic with acceleration and deceleration
 	if input_direction != Vector2.ZERO:
 		velocity = velocity.move_toward(input_direction * speed, acceleration * delta)

@@ -22,26 +22,36 @@ var charisma: float
 # Stores Stats player has earned through leveling
 var available_stat_points: int
 
+# Movement variables
+var speed: float
+
 func _ready():
 	
 	# TEMPORARY: Set default race and class for testing when not running the full game
-	if Global.selected_race == "" or Global.selected_class == "":
-		selected_race = "human"  # Default race
-		selected_class = "warrior"  # Default class
-	else:
-		selected_race = Global.selected_race
-		selected_class = Global.selected_class
+	#if Global.selected_race == "" or Global.selected_class == "":
+		#selected_race = "human"  # Default race
+		#selected_class = "warrior"  # Default class
+	#else:
+		#selected_race = Global.selected_race
+		#selected_class = Global.selected_class
 		
 	# Retrieve race and class from Global
-	# selected_race = Global.selected_race
-	# selected_class = Global.selected_class
+	selected_race = Global.selected_race
+	selected_class = Global.selected_class
+	
+	# Assign the AnimatedSprite2D node to CharMovement
+	movement.set_sprite($AnimatedSprite2D)  # Pass the sprite node
+	movement.init(selected_race, selected_class)
 	
 	print("Player race: " + selected_race + ", Player class: " + selected_class)
 	
 	# Assign the Walking and Idle AnimatedSprite2D nodes to the movement script
 	movement.animated_sprite = $AnimatedSprite2D
 
-
+	# Testing logic
+	selected_race = "human"  # Default race
+	selected_class = "warrior"  # Default class
+	
 	# Initialize player stats based on race and class
 	var final_stats = character_stats.calculate_final_stats(selected_race, selected_class)
 	
@@ -66,6 +76,8 @@ func assign_stats(final_stats: Dictionary):
 	intelligence = round(final_stats["intelligence"])
 	wisdom = round(final_stats["wisdom"])
 	charisma = round(final_stats["charisma"])
+	
+	movement.agility = agility
 
 func _physics_process(delta):
 	# Use movement script to handle movement and animation

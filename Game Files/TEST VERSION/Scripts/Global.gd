@@ -1,4 +1,4 @@
 extends Node
 
-var selected_race = ""
-var selected_class = ""
+var selected_race = "Excharacter"
+var selected_class = "None"

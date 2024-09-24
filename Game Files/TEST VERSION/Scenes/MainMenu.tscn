@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd0qbnuugo3m3"]
+[gd_scene load_steps=5 format=3 uid="uid://cj1cmq7ogqi2a"]
 
 [ext_resource type="Script" path="res://Scripts/Scenes/main_menu.gd" id="1_hm5yi"]
 [ext_resource type="Texture2D" uid="uid://cehn3q66mqc63" path="res://Assets/images/ROGUELIKE temp logo.png" id="1_ks2je"]
