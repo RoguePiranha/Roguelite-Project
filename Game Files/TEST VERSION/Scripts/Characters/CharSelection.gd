@@ -31,21 +31,21 @@ func _ready():
 		add_class_button(className)
 
 	# Connect the start game button
-	$VBoxContainer/ButtonStartGame.connect("pressed", Callable(self, "_on_start_game"))
+	$MarginContainer/ButtonStartGame.connect("pressed", Callable(self, "_on_start_game"))
 
 # Add a race button based on the race name
 func add_race_button(race: String):
 	var button = Button.new()
 	button.text = race.capitalize()
 	button.connect("pressed", Callable(self, "_on_race_selected").bind(race))
-	$VBoxContainer/RaceRow/RaceNames.add_child(button)  # Add button to the race container
+	$MarginContainer/VBoxContainer/RaceRow/RaceNames.add_child(button)  # Add button to the race container
 
 # Add a class button based on the class name
 func add_class_button(className: String):
 	var button = Button.new()
 	button.text = className.capitalize()
 	button.connect("pressed", Callable(self, "_on_class_selected").bind(className))
-	$VBoxContainer/ClassRow/ClassNames.add_child(button)  # Add button to the class container
+	$MarginContainer/VBoxContainer/ClassRow/ClassNames.add_child(button)  # Add button to the class container
 
 # Race selection function
 func _on_race_selected(race: String):
@@ -59,16 +59,16 @@ func _on_class_selected(className: String):
 	update_class_button_highlight(className)
 	print("Selected class: " + className)
 	
-func update_race_button_highlight(selected_race: String):
-	for button in $VBoxContainer/RaceRow/RaceNames.get_children():
-		if button.text.to_lower() == selected_race:
+func update_race_button_highlight(race_name: String):
+	for button in $MarginContainer/VBoxContainer/RaceRow/RaceNames.get_children():
+		if button.text.to_lower() == race_name:
 			button.add_theme_color_override("font_color", Color(1, 1, 0))  # Highlight the selected button
 		else:
 			button.add_theme_color_override("font_color", Color(1, 1, 1))  # Reset others
 			
-func update_class_button_highlight(selected_class: String):
-	for button in $VBoxContainer/ClassRow/ClassNames.get_children():
-		if button.text.to_lower() == selected_class:
+func update_class_button_highlight(className: String):
+	for button in $MarginContainer/VBoxContainer/ClassRow/ClassNames.get_children():
+		if button.text.to_lower() == className:
 			button.add_theme_color_override("font_color", Color(1, 1, 0))  # Highlight the selected button
 		else:
 			button.add_theme_color_override("font_color", Color(1, 1, 1))  # Reset others
@@ -79,6 +79,6 @@ func _on_start_game():
 		print("Starting game with race: " + selected_race + " and class: " + selected_class)
 		Global.selected_race = selected_race
 		Global.selected_class = selected_class
-		get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")  # Load MainScene
+		get_tree().change_scene_to_file("res://Scenes/LevelOne.tscn")  # Load First Stage
 	else:
 		print("Please select both race and class before starting the game.")

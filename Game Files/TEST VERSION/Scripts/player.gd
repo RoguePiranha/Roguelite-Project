@@ -68,9 +68,8 @@ func assign_stats(final_stats: Dictionary):
 	charisma = round(final_stats["charisma"])
 
 func _physics_process(delta):
-	var is_colliding = is_on_floor() or is_on_wall()
 	# Use movement script to handle movement and animation
-	velocity = movement.apply_movement(delta, is_colliding)  # Use built-in velocity
+	velocity = movement.apply_movement(delta)  # Use built-in velocity
 
 	# Move the player using the built-in velocity
 	move_and_slide()

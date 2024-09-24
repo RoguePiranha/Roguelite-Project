@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd0qbnuugo3m3"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/main_menu.gd" id="1_hm5yi"]
+[ext_resource type="Texture2D" uid="uid://cehn3q66mqc63" path="res://Assets/images/ROGUELIKE temp logo.png" id="1_ks2je"]
+[ext_resource type="FontFile" uid="uid://ch1f4c4cvs1uw" path="res://Fonts/FiraCode-Regular.ttf" id="2_2m5xj"]
+
+[sub_resource type="Theme" id="Theme_1ck6h"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+script = ExtResource("1_hm5yi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("1_ks2je")
+stretch_mode = 2
+
+[node name="MenuOptions" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="newGame" type="Button" parent="VBoxContainer/MenuOptions"]
+layout_mode = 2
+theme = SubResource("Theme_1ck6h")
+theme_override_colors/font_hover_color = Color(0.45098, 0.956863, 0, 1)
+theme_override_fonts/font = ExtResource("2_2m5xj")
+theme_override_font_sizes/font_size = 40
+text = "    New Game    "
+flat = true
+
+[node name="library" type="Button" parent="VBoxContainer/MenuOptions"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.45098, 0.956863, 0, 1)
+theme_override_fonts/font = ExtResource("2_2m5xj")
+theme_override_font_sizes/font_size = 40
+text = "Library"
+flat = true
+
+[node name="settings" type="Button" parent="VBoxContainer/MenuOptions"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.45098, 0.956863, 0, 1)
+theme_override_fonts/font = ExtResource("2_2m5xj")
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/MenuOptions/newGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuOptions/library" to="." method="_on_library_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuOptions/settings" to="." method="_on_settings_pressed"]

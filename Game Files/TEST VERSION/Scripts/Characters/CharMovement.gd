@@ -14,14 +14,14 @@ var animated_sprite: AnimatedSprite2D
 # External states
 var is_attacking = false
 var velocity = Vector2()
-var last_horizontal_direction = 1  # 1 for right, -1 for left
+var last_horizontal_direction = -1  # 1 for right, -1 for left
 
 # Get input from the player
 func get_input() -> Vector2:
 	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
 # Apply movement logic based on input
-func apply_movement(delta: float, is_colliding: bool) -> Vector2:
+func apply_movement(delta: float) -> Vector2:
 	var input_direction = get_input()
 	print(deceleration)
 	print(velocity)
@@ -33,10 +33,10 @@ func apply_movement(delta: float, is_colliding: bool) -> Vector2:
 		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
 		velocity *= .95
 		
-	# Stops movement if the player hits a wall or something
-	if is_colliding:
-		velocity = Vector2(0,0)
-		velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
+	## Stops movement if the player hits a wall or something
+	#if is_colliding:
+		#velocity = Vector2(0,0)
+		#velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
 
 	# Move the player (the caller will need to handle this)
 	return velocity
@@ -45,7 +45,7 @@ func apply_movement(delta: float, is_colliding: bool) -> Vector2:
 func update_animations():
 	if is_attacking:
 		# Add attack logic here if needed
-		animated_sprite.flip_h = last_horizontal_direction == -1
+		animated_sprite.flip_h = last_horizontal_direction == 1
 		show_attack()
 		return
 	
@@ -53,11 +53,11 @@ func update_animations():
 		if velocity.x != 0:
 			last_horizontal_direction = sign(velocity.x)
 		# Flip the sprite based on last_horizontal_direction
-		animated_sprite.flip_h = last_horizontal_direction == -1
+		animated_sprite.flip_h = last_horizontal_direction == 1
 		show_walking()
 	else:
 		# Maintain the flip direction when idle
-		animated_sprite.flip_h = last_horizontal_direction == -1
+		animated_sprite.flip_h = last_horizontal_direction == 1
 		show_idle()
 
 # Function to show walking animation

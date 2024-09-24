@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://by3xu2wmf4mbc"]
+
+[ext_resource type="FontFile" uid="uid://ch1f4c4cvs1uw" path="res://Fonts/FiraCode-Regular.ttf" id="1_nraxa"]
+
+[resource]
+font = ExtResource("1_nraxa")
+font_size = 42
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.839216)

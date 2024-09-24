@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UnnamedRoguelike"
-run/main_scene="res://Scenes/MainScene.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
@@ -21,9 +21,10 @@ Global="*res://Scripts/Global.gd"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/size/resizable=false
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 
