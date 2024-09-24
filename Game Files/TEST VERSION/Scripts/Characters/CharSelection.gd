@@ -8,6 +8,9 @@ var selected_class = ""
 var races = preload("res://Scripts/Characters/RacesDict.gd").new()
 var classes = preload("res://Scripts/Characters/ClassesDict.gd").new()
 
+var current_animations
+var animated_sprite: AnimatedSprite2D
+
 # Player data (you would typically load this from a save file)
 var player_data = {
 	"unlocked_races": [],  # Initially empty, will be populated from save or defaults
@@ -19,6 +22,9 @@ func _ready():
 	# Show available race buttons based on player progress
 	#######for race in player_data.unlocked_races:
 		########add_race_button(race)
+	animated_sprite = $MarginContainer/SelectedCharCard/AnimatedSprite2D
+	animated_sprite.play("idle")
+	
 	var available_races = races.get_available_races()	
 	for race in available_races:
 		add_race_button(race)
@@ -56,8 +62,12 @@ func _on_race_selected(race: String):
 # Class selection function
 func _on_class_selected(className: String):
 	selected_class = className
+	current_animations = "res://Animations/Character/"+ selected_race.capitalize() + "/" + selected_class.capitalize() + "/Animations.tres"
+	animated_sprite.frames = load(current_animations)
+	animated_sprite.play("idle")
 	update_class_button_highlight(className)
 	print("Selected class: " + className)
+
 	
 func update_race_button_highlight(race_name: String):
 	for button in $MarginContainer/VBoxContainer/RaceRow/RaceNames.get_children():
@@ -73,6 +83,11 @@ func update_class_button_highlight(className: String):
 		else:
 			button.add_theme_color_override("font_color", Color(1, 1, 1))  # Reset others
 
+func update_variables():
+	current_animations = "res://Animations/Character/"+ selected_race.capitalize() + "/" + selected_class.capitalize() + "/Animations.tres"
+	animated_sprite.frames = load(current_animations)
+	animated_sprite.play("idle")
+	
 # Start game function
 func _on_start_game():
 	if selected_race != "" and selected_class != "":
