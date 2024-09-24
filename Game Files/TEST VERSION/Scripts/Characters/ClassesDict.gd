@@ -24,7 +24,7 @@ var class_data = {
 	"warrior": {
 		"strength": 8,
 		"constitution": 8,
-		"agility": 673,
+		"agility": 3,
 		"dexterity": 4,
 		"intelligence": 1,
 		"wisdom": 1,

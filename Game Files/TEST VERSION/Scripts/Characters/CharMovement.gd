@@ -25,7 +25,7 @@ var is_attacking = false
 var velocity = Vector2()
 var last_horizontal_direction = -1  # 1 for right, -1 for left
 
-func init(race: String, className: String):
+func init():
 	# Ensure selected race and class are initialized from Global
 	selected_race = Global.selected_race
 	selected_class = Global.selected_class

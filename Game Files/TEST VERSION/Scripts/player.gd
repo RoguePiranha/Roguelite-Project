@@ -41,7 +41,7 @@ func _ready():
 	
 	# Assign the AnimatedSprite2D node to CharMovement
 	movement.set_sprite($AnimatedSprite2D)  # Pass the sprite node
-	movement.init(selected_race, selected_class)
+	movement.init()
 	
 	print("Player race: " + selected_race + ", Player class: " + selected_class)
 	
