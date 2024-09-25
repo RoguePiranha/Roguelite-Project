@@ -23,6 +23,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_3ma1b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = ExtResource("2_m7hi5")
 animation = &"walk_back_diag"
 

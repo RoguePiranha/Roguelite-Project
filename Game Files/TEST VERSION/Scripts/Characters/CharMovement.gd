@@ -63,62 +63,78 @@ func play_walk_animation(direction: Vector2):
 	direction = direction.normalized()
 	# Check for diagonal movements first
 	if direction.x != 0 and direction.y != 0:
+		# Top left of screen
 		if direction.x < 0 and direction.y < 0:
-			if animated_sprite.animation != "unarmed_walk_up_left" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_walk_up_left")
+			animated_sprite.flip_h = false
+			if animated_sprite.animation != "walk_back_diag" or !animated_sprite.is_playing():
+				animated_sprite.play("walk_back_diag")
+		# Top right of screen
 		elif direction.x > 0 and direction.y < 0:
-			if animated_sprite.animation != "unarmed_walk_up_right" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_walk_up_right")
+			animated_sprite.flip_h = true
+			if animated_sprite.animation != "walk_back_diag" or !animated_sprite.is_playing():
+				animated_sprite.play("walk_back_diag")
+		# Bottom left of screen
 		elif direction.x < 0 and direction.y > 0:
-			if animated_sprite.animation != "unarmed_walk_down_left" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_walk_down_left")
+			animated_sprite.flip_h = false
+			if animated_sprite.animation != "walk_front_diag" or !animated_sprite.is_playing():
+				animated_sprite.play("walk_front_diag")
+		# Bottom right of screen
 		elif direction.x > 0 and direction.y > 0:
-			if animated_sprite.animation != "unarmed_walk_down_right" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_walk_down_right")
+			animated_sprite.flip_h = true
+			if animated_sprite.animation != "walk_front_diag" or !animated_sprite.is_playing():
+				animated_sprite.play("walk_front_diag")
 	# Handle single direction movement
 	elif direction.x != 0:
 		if direction.x < 0:
-			if animated_sprite.animation != "unarmed_walk_left" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_walk_left")
+			animated_sprite.flip_h = false
+			if animated_sprite.animation != "walk_side" or !animated_sprite.is_playing():
+				animated_sprite.play("walk_side")
 		else:
-			if animated_sprite.animation != "unarmed_walk_right" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_walk_right")
+			animated_sprite.flip_h = true
+			if animated_sprite.animation != "idle_side" or !animated_sprite.is_playing():
+				animated_sprite.play("idle_side")
 	elif direction.y != 0:
 		if direction.y < 0:
-			if animated_sprite.animation != "unarmed_walk_back" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_walk_back")
+			animated_sprite.flip_h = false
+			if animated_sprite.animation != "walk_back" or !animated_sprite.is_playing():
+				animated_sprite.play("walk_back")
 		else:
-			if animated_sprite.animation != "unarmed_walk_front" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_walk_front")
+			animated_sprite.flip_h = false
+			if animated_sprite.animation != "walk_front" or !animated_sprite.is_playing():
+				animated_sprite.play("walk_front")
 
 # Play idle animation based on the last movement direction (8 directions)
 func play_idle_animation(direction: Vector2):
 	# Diagonal animations
+	# Top left of screen
 	if direction.x < 0 and direction.y < 0:
-		if animated_sprite.animation != "unarmed_idle_up_left" or !animated_sprite.is_playing():
-			animated_sprite.play("unarmed_idle_up_left")
+		if animated_sprite.animation != "walk_back_diag" or !animated_sprite.is_playing():
+			animated_sprite.play("walk_back_diag")
+	# Top right of screen
 	elif direction.x > 0 and direction.y < 0:
-		if animated_sprite.animation != "unarmed_idle_up_right" or !animated_sprite.is_playing():
-			animated_sprite.play("unarmed_idle_up_right")
+		if animated_sprite.animation != "walk_back_diag" or !animated_sprite.is_playing():
+			animated_sprite.play("walk_back_diag")
+	# Bottom left of screen
 	elif direction.x < 0 and direction.y > 0:
-		if animated_sprite.animation != "unarmed_idle_down_left" or !animated_sprite.is_playing():
-			animated_sprite.play("unarmed_idle_down_left")
+		if animated_sprite.animation != "walk_front_diag" or !animated_sprite.is_playing():
+			animated_sprite.play("walk_front_diag")
+	# Bottom right of screen
 	elif direction.x > 0 and direction.y > 0:
-		if animated_sprite.animation != "unarmed_idle_down_right" or !animated_sprite.is_playing():
-			animated_sprite.play("unarmed_idle_down_right")
+		if animated_sprite.animation != "walk_front_diag" or !animated_sprite.is_playing():
+			animated_sprite.play("walk_front_diag")
 	# Single direction animations
 	elif direction.y < 0:
-		if animated_sprite.animation != "unarmed_idle_back" or !animated_sprite.is_playing():
-			animated_sprite.play("unarmed_idle_back")
+		if animated_sprite.animation != "idle_back" or !animated_sprite.is_playing():
+			animated_sprite.play("idle_back")
 	elif direction.y > 0:
-		if animated_sprite.animation != "unarmed_idle_front" or !animated_sprite.is_playing():
-			animated_sprite.play("unarmed_idle_front")
+		if animated_sprite.animation != "idle_front" or !animated_sprite.is_playing():
+			animated_sprite.play("idle_front")
 	elif direction.x < 0:
-		if animated_sprite.animation != "unarmed_idle_left" or !animated_sprite.is_playing():
-			animated_sprite.play("unarmed_idle_left")
+		if animated_sprite.animation != "idle_side" or !animated_sprite.is_playing():
+			animated_sprite.play("idle_side")
 	elif direction.x > 0:
-		if animated_sprite.animation != "unarmed_idle_right" or !animated_sprite.is_playing():
-			animated_sprite.play("unarmed_idle_right")
+		if animated_sprite.animation != "idle_side" or !animated_sprite.is_playing():
+			animated_sprite.play("idle_side")
 
 # Function to play attack animation (if needed)
 func play_attack_animation():
