@@ -1,19 +1,49 @@
-[gd_scene load_steps=4 format=3 uid="uid://dji34oggkb8b1"]
+[gd_scene load_steps=8 format=3 uid="uid://dji34oggkb8b1"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_hldmp"]
-[ext_resource type="SpriteFrames" uid="uid://k3qdw3a2l653" path="res://Animations/Character/Excharacter/None/Animations.tres" id="2_8pyc4"]
+[ext_resource type="SpriteFrames" uid="uid://cwbf715w18oxt" path="res://Animations/Character/Human/Warrior/Animations.tres" id="2_m7hi5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqer4"]
-size = Vector2(34, 18.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ma1b"]
+radius = 4.5
+height = 15.0
+
+[sub_resource type="Animation" id="Animation_xeoc2"]
+resource_name = "sword swing"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oeq8k"]
+_data = {
+"sword swing": SubResource("Animation_xeoc2")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n4eix"]
+radius = 15.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nu4o"]
+size = Vector2(26, 21)
 
 [node name="Player" type="CharacterBody2D"]
 platform_wall_layers = 1
 script = ExtResource("1_hldmp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 20.25)
-shape = SubResource("RectangleShape2D_xqer4")
+[node name="wallCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 10.5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3ma1b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_8pyc4")
-animation = &"walk"
+sprite_frames = ExtResource("2_m7hi5")
+animation = &"idle"
+frame_progress = 0.561246
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oeq8k")
+}
+
+[node name="HeadHitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_n4eix")
+
+[node name="BodyHitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_3nu4o")

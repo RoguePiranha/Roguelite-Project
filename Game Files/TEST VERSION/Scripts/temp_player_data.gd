@@ -12,8 +12,8 @@
 #var base_speed: float
 # Actual movement speed is the base_speed + ((current - base agility) * (base_speed * .01))
 
-extends Resource
-
-class_name game_state
-
-export var player_stats : Dictionary
+#extends Resource
+#
+#class_name game_state
+#
+#export var player_stats : Dictionary

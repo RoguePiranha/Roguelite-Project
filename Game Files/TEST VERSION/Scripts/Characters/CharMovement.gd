@@ -1,106 +1,109 @@
 extends Node
 
-var character_stats = preload("res://Scripts/Characters/ClassesDict.gd").new()
-
-var selected_race = ""
-var selected_class = ""
-
-# Animation state (to hold specific animations for the selected race and class)
-var current_animations
-
-# Movement variabl
-var acceleration = 800
-var deceleration = 3200
-var base_speed = 100
-var speed_multiplier = 5
-var agility: float
+# Movement variables (will be set from player.gd)
 var speed: float
-
-	
-# Animation reference (single AnimatedSprite2D node)
-var animated_sprite: AnimatedSprite2D
+var acceleration: float
+var deceleration: float
 
 # External states
 var is_attacking = false
-var velocity = Vector2()
-var last_horizontal_direction = -1  # 1 for right, -1 for left
 
-func init():
-	# Ensure selected race and class are initialized from Global
-	selected_race = Global.selected_race
-	selected_class = Global.selected_class
+# Direction constants
+enum Direction { UP, DOWN, LEFT, RIGHT }
 
-	# Load specific animations based on race and class
-	current_animations = "res://Animations/Character/"+ selected_race.capitalize() + "/" + selected_class.capitalize() + "/Animations.tres"
-	var spriteFrames = load(current_animations)
-	animated_sprite.frames = spriteFrames
-	if current_animations.is_empty():
-		print("Error: No animations found for " + selected_race + ", " + selected_class)
-	else:
-		print("Animations successfully loaded for " + selected_race + ", " + selected_class)
-		
-func set_sprite(sprite: AnimatedSprite2D):
-	animated_sprite = sprite
-	if animated_sprite:
-		print("AnimatedSprite2D set successfully.")
-	else:
-		print("Error: AnimatedSprite2D node not found!")
-		
+# Keep track of the last movement direction
+var last_direction = Direction.DOWN  # Default facing down
+
+# Reference to the player's AnimatedSprite2D node (set from player.gd)
+var animated_sprite: AnimatedSprite2D
 
 # Get input from the player
 func get_input() -> Vector2:
 	return Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
 # Apply movement logic based on input
-func apply_movement(delta: float) -> Vector2:
+func apply_movement(delta: float, velocity: Vector2) -> Vector2:
 	var input_direction = get_input()
-	speed = base_speed + (agility * speed_multiplier)
-	
-	# Apply movement logic with acceleration and deceleration
-	if input_direction != Vector2.ZERO:
-		velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
-	else:
-		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
-		velocity *= .95
-		
-	## Stops movement if the player hits a wall or something
-	#if is_colliding:
-		#velocity = Vector2(0,0)
-		#velocity = velocity.move_toward(input_direction * speed, acceleration * delta)
+	var target_velocity: Vector2
+	var current_acceleration: float
 
-	# Move the player (the caller will need to handle this)
+	if input_direction != Vector2.ZERO:
+		target_velocity = input_direction * speed
+		current_acceleration = acceleration
+	else:
+		target_velocity = Vector2.ZERO
+		current_acceleration = deceleration
+
+	velocity = velocity.move_toward(target_velocity, current_acceleration * delta)
 	return velocity
 
 # Handle animations based on movement
-func update_animations():
+func update_animations(velocity: Vector2):
 	if is_attacking:
 		# Add attack logic here if needed
-		animated_sprite.flip_h = last_horizontal_direction == 1
-		show_attack()
+		play_attack_animation()
 		return
-	
+
 	if velocity.length() > 0:
-		if velocity.x != 0:
-			last_horizontal_direction = sign(velocity.x)
-		# Flip the sprite based on last_horizontal_direction
-		animated_sprite.flip_h = last_horizontal_direction == 1
-		show_walking()
+		# Determine movement direction
+		var direction: Direction = get_movement_direction(velocity)
+		last_direction = direction
+		play_walk_animation(direction)
 	else:
-		# Maintain the flip direction when idle
-		animated_sprite.flip_h = last_horizontal_direction == 1
-		show_idle()
+		# Play idle animation based on last movement direction
+		play_idle_animation(last_direction)
 
-# Function to show walking animation
-func show_walking():
-	if animated_sprite.animation != "walk" or !animated_sprite.is_playing():
-		animated_sprite.play("walk")
+# Determine movement direction based on velocity
+func get_movement_direction(velocity: Vector2) -> Direction:
+	if abs(velocity.x) > abs(velocity.y):
+		if velocity.x > 0:
+			return Direction.RIGHT
+		else:
+			return Direction.LEFT
+	else:
+		if velocity.y > 0:
+			return Direction.DOWN
+		else:
+			return Direction.UP
 
-# Function to show idle animation
-func show_idle():
-	if animated_sprite.animation != "idle" or !animated_sprite.is_playing():
-		animated_sprite.play("idle")
+# Play the appropriate walking animation
+func play_walk_animation(direction: Direction):
+	match direction:
+		Direction.UP:
+			if animated_sprite.animation != "unarmed_walk_back" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_walk_back")
+		Direction.DOWN:
+			if animated_sprite.animation != "unarmed_walk_front" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_walk_front")
+		Direction.LEFT:
+			if animated_sprite.animation != "unarmed_walk_left" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_walk_left")
+		Direction.RIGHT:
+			if animated_sprite.animation != "unarmed_walk_right" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_walk_right")
 
-# Function to show attack animation (if needed)
-func show_attack():
-	if animated_sprite.animation != "attack" or !animated_sprite.is_playing():
-		animated_sprite.play("attack")
+# Play the appropriate idle animation
+func play_idle_animation(direction: Direction):
+	match direction:
+		Direction.UP:
+			if animated_sprite.animation != "unarmed_idle_back" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_idle_back")
+		Direction.DOWN:
+			if animated_sprite.animation != "unarmed_idle_front" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_idle_front")
+		Direction.LEFT:
+			if animated_sprite.animation != "unarmed_idle_left" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_idle_left")
+		Direction.RIGHT:
+			if animated_sprite.animation != "unarmed_idle_right" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_idle_right")
+
+# Function to play attack animation (if needed)
+func play_attack_animation():
+	# Implement attack animations for each direction if available
+	pass
+
+# Function to initialize any required variables or settings
+func init():
+	# Initialize variables if needed
+	pass
