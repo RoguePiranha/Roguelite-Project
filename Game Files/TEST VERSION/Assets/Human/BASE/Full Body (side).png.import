@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6g4xpdw6puus"
-path="res://.godot/imported/Body(front).png-8ab49f9ae8b690f48d280e3c725a57d7.ctex"
+uid="uid://btoi6k2ipqyaw"
+path="res://.godot/imported/Full Body (side).png-4b571f9beb77c2f6e13c17ddac93442d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Human/BASE/Body(front).png"
-dest_files=["res://.godot/imported/Body(front).png-8ab49f9ae8b690f48d280e3c725a57d7.ctex"]
+source_file="res://Assets/Human/BASE/Full Body (side).png"
+dest_files=["res://.godot/imported/Full Body (side).png-4b571f9beb77c2f6e13c17ddac93442d.ctex"]
 
 [params]
 
