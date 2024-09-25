@@ -24,8 +24,7 @@ shape = SubResource("CapsuleShape2D_3ma1b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_m7hi5")
-animation = &"idle"
-frame_progress = 0.0997284
+animation = &"idle_back"
 
 [node name="HeadHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
