@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://dkxs26wevt5x3"
-=======
-uid="uid://bmp701u5yb5t3"
->>>>>>> 0a346064402a93d069026b2dde76c3c398e89cf1
-path="res://.godot/imported/Eye(right-pupil).png-cdf99cfbd8bb15fa3e13490d3a1aaf8e.ctex"
+uid="uid://dtdku8dr1mpvy"
+path="res://.godot/imported/Human Warrior Idle blink.png-44b212a58811304113d1158a11d1f013.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Human/BASE/Eye(right-pupil).png"
-dest_files=["res://.godot/imported/Eye(right-pupil).png-cdf99cfbd8bb15fa3e13490d3a1aaf8e.ctex"]
+source_file="res://Assets/Human/Warrior/Human Warrior Idle blink.png"
+dest_files=["res://.godot/imported/Human Warrior Idle blink.png-44b212a58811304113d1158a11d1f013.ctex"]
 
 [params]
 

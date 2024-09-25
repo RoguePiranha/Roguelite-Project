@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=16 format=3 uid="uid://cwbf715w18oxt"]
 
-[ext_resource type="Texture2D" uid="uid://dtdku8dr1mpvy" path="res://Animations/Character/Human/Warrior/Human Warrior Idle blink.png" id="1_s812t"]
+[ext_resource type="Texture2D" uid="uid://dtdku8dr1mpvy" path="res://Assets/Human/Warrior/Human Warrior Idle blink.png" id="1_s812t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_txapt"]
 atlas = ExtResource("1_s812t")

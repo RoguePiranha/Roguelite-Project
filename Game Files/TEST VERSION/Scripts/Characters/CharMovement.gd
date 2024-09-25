@@ -1,10 +1,10 @@
 extends Node
 
-# Movement variables (will be set from player.gd)
-var speed: float
-var acceleration: float
-var deceleration: float
-
+# Movement variables
+var agility: float
+var speed = 200.0 + (agility * 5)
+var acceleration: float = 800  # Default acceleration
+var deceleration: float = 3200.0  # Default deceleration
 # External states
 var is_attacking = false
 
@@ -12,7 +12,7 @@ var is_attacking = false
 enum Direction { UP, DOWN, LEFT, RIGHT }
 
 # Keep track of the last movement direction
-var last_direction = Direction.DOWN  # Default facing down
+var last_direction = Vector2.ZERO  # Default facing down
 
 # Reference to the player's AnimatedSprite2D node (set from player.gd)
 var animated_sprite: AnimatedSprite2D
@@ -37,7 +37,7 @@ func apply_movement(delta: float, velocity: Vector2) -> Vector2:
 	velocity = velocity.move_toward(target_velocity, current_acceleration * delta)
 	return velocity
 
-# Handle animations based on movement
+# Handle animations based on velocity
 func update_animations(velocity: Vector2):
 	if is_attacking:
 		# Add attack logic here if needed
@@ -46,57 +46,79 @@ func update_animations(velocity: Vector2):
 
 	if velocity.length() > 0:
 		# Determine movement direction
-		var direction: Direction = get_movement_direction(velocity)
+		var direction: Vector2 = get_movement_direction(velocity)
 		last_direction = direction
 		play_walk_animation(direction)
 	else:
 		# Play idle animation based on last movement direction
 		play_idle_animation(last_direction)
 
-# Determine movement direction based on velocity
-func get_movement_direction(velocity: Vector2) -> Direction:
-	if abs(velocity.x) > abs(velocity.y):
-		if velocity.x > 0:
-			return Direction.RIGHT
-		else:
-			return Direction.LEFT
-	else:
-		if velocity.y > 0:
-			return Direction.DOWN
-		else:
-			return Direction.UP
+# Determine movement direction based on velocity for 8 directions
+func get_movement_direction(velocity: Vector2) -> Vector2:
+	velocity = velocity.normalized()
+	return velocity
 
 # Play the appropriate walking animation
-func play_walk_animation(direction: Direction):
-	match direction:
-		Direction.UP:
-			if animated_sprite.animation != "unarmed_walk_back" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_walk_back")
-		Direction.DOWN:
-			if animated_sprite.animation != "unarmed_walk_front" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_walk_front")
-		Direction.LEFT:
+func play_walk_animation(direction: Vector2):
+	direction = direction.normalized()
+	# Check for diagonal movements first
+	if direction.x != 0 and direction.y != 0:
+		if direction.x < 0 and direction.y < 0:
+			if animated_sprite.animation != "unarmed_walk_up_left" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_walk_up_left")
+		elif direction.x > 0 and direction.y < 0:
+			if animated_sprite.animation != "unarmed_walk_up_right" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_walk_up_right")
+		elif direction.x < 0 and direction.y > 0:
+			if animated_sprite.animation != "unarmed_walk_down_left" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_walk_down_left")
+		elif direction.x > 0 and direction.y > 0:
+			if animated_sprite.animation != "unarmed_walk_down_right" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_walk_down_right")
+	# Handle single direction movement
+	elif direction.x != 0:
+		if direction.x < 0:
 			if animated_sprite.animation != "unarmed_walk_left" or !animated_sprite.is_playing():
 				animated_sprite.play("unarmed_walk_left")
-		Direction.RIGHT:
+		else:
 			if animated_sprite.animation != "unarmed_walk_right" or !animated_sprite.is_playing():
 				animated_sprite.play("unarmed_walk_right")
+	elif direction.y != 0:
+		if direction.y < 0:
+			if animated_sprite.animation != "unarmed_walk_back" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_walk_back")
+		else:
+			if animated_sprite.animation != "unarmed_walk_front" or !animated_sprite.is_playing():
+				animated_sprite.play("unarmed_walk_front")
 
-# Play the appropriate idle animation
-func play_idle_animation(direction: Direction):
-	match direction:
-		Direction.UP:
-			if animated_sprite.animation != "unarmed_idle_back" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_idle_back")
-		Direction.DOWN:
-			if animated_sprite.animation != "unarmed_idle_front" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_idle_front")
-		Direction.LEFT:
-			if animated_sprite.animation != "unarmed_idle_left" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_idle_left")
-		Direction.RIGHT:
-			if animated_sprite.animation != "unarmed_idle_right" or !animated_sprite.is_playing():
-				animated_sprite.play("unarmed_idle_right")
+# Play idle animation based on the last movement direction (8 directions)
+func play_idle_animation(direction: Vector2):
+	# Diagonal animations
+	if direction.x < 0 and direction.y < 0:
+		if animated_sprite.animation != "unarmed_idle_up_left" or !animated_sprite.is_playing():
+			animated_sprite.play("unarmed_idle_up_left")
+	elif direction.x > 0 and direction.y < 0:
+		if animated_sprite.animation != "unarmed_idle_up_right" or !animated_sprite.is_playing():
+			animated_sprite.play("unarmed_idle_up_right")
+	elif direction.x < 0 and direction.y > 0:
+		if animated_sprite.animation != "unarmed_idle_down_left" or !animated_sprite.is_playing():
+			animated_sprite.play("unarmed_idle_down_left")
+	elif direction.x > 0 and direction.y > 0:
+		if animated_sprite.animation != "unarmed_idle_down_right" or !animated_sprite.is_playing():
+			animated_sprite.play("unarmed_idle_down_right")
+	# Single direction animations
+	elif direction.y < 0:
+		if animated_sprite.animation != "unarmed_idle_back" or !animated_sprite.is_playing():
+			animated_sprite.play("unarmed_idle_back")
+	elif direction.y > 0:
+		if animated_sprite.animation != "unarmed_idle_front" or !animated_sprite.is_playing():
+			animated_sprite.play("unarmed_idle_front")
+	elif direction.x < 0:
+		if animated_sprite.animation != "unarmed_idle_left" or !animated_sprite.is_playing():
+			animated_sprite.play("unarmed_idle_left")
+	elif direction.x > 0:
+		if animated_sprite.animation != "unarmed_idle_right" or !animated_sprite.is_playing():
+			animated_sprite.play("unarmed_idle_right")
 
 # Function to play attack animation (if needed)
 func play_attack_animation():

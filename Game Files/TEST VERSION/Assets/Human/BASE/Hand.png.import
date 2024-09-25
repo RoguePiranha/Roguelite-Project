@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtdku8dr1mpvy"
-path="res://.godot/imported/Human Warrior Idle blink.png-17e55c6c1aa168972c1c30154eecad85.ctex"
+uid="uid://dfhmjauc7u8ah"
+path="res://.godot/imported/Hand.png-048c50c1a07c0bea34f6473952dfec9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animations/Character/Human/Warrior/Human Warrior Idle blink.png"
-dest_files=["res://.godot/imported/Human Warrior Idle blink.png-17e55c6c1aa168972c1c30154eecad85.ctex"]
+source_file="res://Assets/Human/BASE/Hand.png"
+dest_files=["res://.godot/imported/Hand.png-048c50c1a07c0bea34f6473952dfec9a.ctex"]
 
 [params]
 
