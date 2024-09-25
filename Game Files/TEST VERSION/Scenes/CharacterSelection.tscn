@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bo0ugvowthkvy"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/CharSelection.gd" id="1_kfh5m"]
-[ext_resource type="LabelSettings" path="res://Assets/LabelSettings/Header.tres" id="2_vi2rv"]
+[ext_resource type="LabelSettings" uid="uid://by3xu2wmf4mbc" path="res://Assets/LabelSettings/Header.tres" id="2_vi2rv"]
 [ext_resource type="Texture2D" uid="uid://bdj8yv17lyfro" path="res://Assets/Human/icons/human_warrior.png" id="3_c6pem"]
 [ext_resource type="SpriteFrames" uid="uid://k3qdw3a2l653" path="res://Animations/Character/Excharacter/None/Animations.tres" id="4_xyg45"]
 

@@ -1,19 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dji34oggkb8b1"]
+[gd_scene load_steps=6 format=3 uid="uid://dji34oggkb8b1"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_hldmp"]
 [ext_resource type="SpriteFrames" uid="uid://cwbf715w18oxt" path="res://Animations/Character/Human/Warrior/Animations.tres" id="2_m7hi5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ma1b"]
 radius = 4.5
-height = 15.0
-
-[sub_resource type="Animation" id="Animation_xeoc2"]
-resource_name = "sword swing"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_oeq8k"]
-_data = {
-"sword swing": SubResource("Animation_xeoc2")
-}
+height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n4eix"]
 radius = 15.0
@@ -26,19 +18,14 @@ platform_wall_layers = 1
 script = ExtResource("1_hldmp")
 
 [node name="wallCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 10.5)
+position = Vector2(0, 27)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_3ma1b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_m7hi5")
 animation = &"idle"
-frame_progress = 0.561246
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_oeq8k")
-}
+frame_progress = 0.0997284
 
 [node name="HeadHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
