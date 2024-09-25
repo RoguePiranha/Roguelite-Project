@@ -1,7 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cwbf715w18oxt"]
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://cwbf715w18oxt"]
 
 [ext_resource type="Texture2D" uid="uid://d2au2lu6xpp4b" path="res://Assets/Human/BASE/Full Body (back).png" id="1_p3ety"]
 [ext_resource type="Texture2D" uid="uid://csf37b503hxbc" path="res://Assets/Human/BASE/Full Body (front).png" id="2_7rbmn"]
+[ext_resource type="Texture2D" uid="uid://bghi6p0josh0c" path="res://Assets/Human/BASE/Full Body (back diag).png" id="2_12g3j"]
 [ext_resource type="Texture2D" uid="uid://c6p8hqaleoka4" path="res://Assets/Human/BASE/Full Body (front-diag).png" id="3_lmm8v"]
 [ext_resource type="Texture2D" uid="uid://btoi6k2ipqyaw" path="res://Assets/Human/BASE/Full Body (side).png" id="4_do3jq"]
 
@@ -15,7 +16,10 @@ animations = [{
 "name": &"idle_back",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_12g3j")
+}],
 "loop": true,
 "name": &"idle_back_diag",
 "speed": 5.0
@@ -52,7 +56,10 @@ animations = [{
 "name": &"walk_back",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_12g3j")
+}],
 "loop": true,
 "name": &"walk_back_diag",
 "speed": 5.0
