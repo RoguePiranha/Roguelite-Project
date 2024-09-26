@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
   <diagram name="Page-1" id="0Z3T1p2_KEFDvT1Kg05W">
-    <mxGraphModel dx="3194" dy="1596" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="5785" dy="2890" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1182,8 +1182,8 @@
         <mxCell id="yrAmuNWufyrD30hrC2M3-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-810" y="980" width="1300" height="610" as="geometry" />
         </mxCell>
-        <mxCell id="yrAmuNWufyrD30hrC2M3-2" value="Disgusting, ugly creatures.&lt;div&gt;Goblins are small, mischievous,&lt;br&gt;&lt;/div&gt;&lt;div&gt;and quick. They are often seen&lt;/div&gt;&lt;div&gt;as scavengers and tricksters.&lt;/div&gt;&lt;div&gt;Many humans will attack Goblins&lt;/div&gt;&lt;div&gt;on sight. They are physically&lt;/div&gt;&lt;div&gt;weak but excel in dexterity and&lt;/div&gt;&lt;div&gt;agility.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="40" y="1123" width="200" height="130" as="geometry" />
+        <mxCell id="yrAmuNWufyrD30hrC2M3-2" value="Disgusting, ugly creatures.&lt;div&gt;Goblins are small, mischievous,&lt;br&gt;&lt;/div&gt;&lt;div&gt;and quick. They are often seen&lt;/div&gt;&lt;div&gt;as scavengers and tricksters.&lt;/div&gt;&lt;div&gt;Many species will attack Goblins&lt;/div&gt;&lt;div&gt;on sight. They are physically&lt;/div&gt;&lt;div&gt;weak but excel in dexterity and&lt;/div&gt;&lt;div&gt;agility.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="45" y="1125" width="191" height="127" as="geometry" />
         </mxCell>
         <mxCell id="yrAmuNWufyrD30hrC2M3-3" value="Agile and intelligent, elves are&lt;div&gt;naturally skilled in magic and archery&lt;/div&gt;&lt;div&gt;but tend to lack physical strength&lt;/div&gt;&lt;div&gt;and toughness.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="-570" y="1183" width="220" height="70" as="geometry" />
