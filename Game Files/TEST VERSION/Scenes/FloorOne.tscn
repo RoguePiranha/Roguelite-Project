@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://kjf01dicghor"]
+[gd_scene load_steps=5 format=4 uid="uid://kjf01dicghor"]
 
 [ext_resource type="Script" path="res://Scenes/floor_one.gd" id="1_1rdfe"]
 [ext_resource type="PackedScene" uid="uid://dji34oggkb8b1" path="res://Scenes/Player.tscn" id="2_qmuja"]
@@ -21,7 +21,7 @@ position = Vector2(-14921, -14900)
 
 [node name="Camera2D" type="Camera2D" parent="Area2D/CollisionShape2D/Player"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAoAAAAAAAIAAAAAAAkAAAAAAAIAAAAAAAgAAAAAAAIAAAAAAAcAAAAAAAIAAAAAAAYAAAAAAAIAAAAAAAUAAAAAAAIAAAAAAAQAAAAAAAIAAAAAAAMAAAAAAAIAAAAAAAIAAAAAAAIAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAIAAAABAAAAAAAAAAIAAAACAAAAAAAAAAIAAAADAAAAAAAAAAIAAAAEAAAAAAAAAAIAAAAFAAAAAAAAAAIAAAAGAAAAAAAAAAIAAAAHAAAAAAAAAAIAAAAIAAAAAAAAAAIAAAAJAAAAAAAAAAIAAAAKAAAAAAAAAAIAAAA=")
 tile_set = ExtResource("3_7jcc8")
-format = 2
-layer_0/tile_data = PackedInt32Array(655360, 0, 2, 589824, 0, 2, 524288, 0, 2, 458752, 0, 2, 393216, 0, 2, 327680, 0, 2, 262144, 0, 2, 196608, 0, 2, 131072, 0, 2, 65536, 0, 2, 0, 0, 2, 1, 0, 2, 2, 0, 2, 3, 0, 2, 4, 0, 2, 5, 0, 2, 6, 0, 2, 7, 0, 2, 8, 0, 2, 9, 0, 2, 10, 0, 2)
