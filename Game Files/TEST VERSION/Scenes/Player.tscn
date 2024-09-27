@@ -43,6 +43,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_5khq8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -18)
 sprite_frames = ExtResource("2_m7hi5")
 animation = &"walk_back_diag"
 
