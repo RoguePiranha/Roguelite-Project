@@ -43,7 +43,6 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_5khq8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = ExtResource("2_m7hi5")
 animation = &"walk_back_diag"
 
@@ -58,6 +57,7 @@ position = Vector2(0.5, -0.25)
 shape = SubResource("RectangleShape2D_3nu4o")
 
 [node name="Head" type="Node2D" parent="."]
+visible = false
 
 [node name="BaseHeadSprite_Front" type="Sprite2D" parent="Head"]
 top_level = true
@@ -85,6 +85,7 @@ position = Vector2(0, -43)
 texture = ExtResource("7_uyri3")
 
 [node name="Body" type="Node2D" parent="."]
+visible = false
 
 [node name="BaseBodySprite_Front" type="Sprite2D" parent="Body"]
 texture = ExtResource("8_4d6xh")
@@ -106,18 +107,21 @@ visible = false
 texture = ExtResource("12_18bm0")
 
 [node name="LeftHand" type="Node2D" parent="."]
+visible = false
 
 [node name="BaseLeftHand" type="Sprite2D" parent="LeftHand"]
 position = Vector2(28, 0)
 texture = ExtResource("13_0quby")
 
 [node name="RightHand" type="Node2D" parent="."]
+visible = false
 
 [node name="BaseRightHand" type="Sprite2D" parent="RightHand"]
 position = Vector2(-28, 0)
 texture = ExtResource("13_0quby")
 
 [node name="Feet" type="Node2D" parent="."]
+visible = false
 
 [node name="BaseFootSprite_Left" type="Sprite2D" parent="Feet"]
 position = Vector2(12, 27)

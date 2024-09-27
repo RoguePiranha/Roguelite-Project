@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://kjf01dicghor"]
+
+[ext_resource type="Script" path="res://Scenes/floor_one.gd" id="1_1rdfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cafl4"]
+
+[node name="FloorOne" type="Node2D"]
+script = ExtResource("1_1rdfe")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_cafl4")
