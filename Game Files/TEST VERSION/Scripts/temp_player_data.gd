@@ -50,6 +50,8 @@ var completed_quests: Array = []  # List of completed quest_ids
 var quest_progress: Dictionary = {}  # Detailed progress for each quest
 
 # Skills and spells
+# example of data structure for learned_skills:
+# { "fireball": 3, "heal": 2, "dodge": 1 }
 var learned_skills: Dictionary = {}  # key: skill_name, value: level or data
 var skill_levels: Dictionary = {}  # key: skill_name, value: skill level
 var skill_cooldowns: Dictionary = {}  # key: skill_name, value: remaining cooldown time
