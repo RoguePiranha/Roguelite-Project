@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgkayqtd23wnl"]
+
+[ext_resource type="Texture2D" uid="uid://ci8yc31518qj7" path="res://Assets/Test Assets/PixelCrawler Assets/Pixel Crawler - Fairy Forest 1.7/Enemies/Elf - Hunter/Idle/Idle-Sheet.png" id="1_de4hq"]
+[ext_resource type="Script" path="res://Scripts/test_enemy.gd" id="1_r0h24"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6iyi"]
+atlas = ExtResource("1_de4hq")
+region = Rect2(21, 32, 21, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p52e8"]
+size = Vector2(20, 32)
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("detection_area")]
+script = ExtResource("1_r0h24")
+detection_area = NodePath("DetectionArea")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_l6iyi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p52e8")
+disabled = true
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="DetectionArea"]
+polygon = PackedVector2Array(504, 233, 504, -233, 0, -10, 0, 0)

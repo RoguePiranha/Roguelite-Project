@@ -31,11 +31,11 @@ var enemies_seen: Dictionary = {
 var learned_skills: Dictionary = {
 	# We need to define what some of these are
 	"": false,
-	"": false,
-	"": false,
-	"": false,
-	"": false,
-	"": false
+	"1": false,
+	"2": false,
+	"3": false,
+	"4": false,
+	"5": false
 }  # key: skill_name, value: level or data
 var learned_spells: Dictionary = {
 	"mana_bolt": false,
@@ -120,7 +120,7 @@ var unlockedStarterClasses: Dictionary = {
 	"Rogue": true,
 	"Priest": true,
 	"Wanderer": true,
-	"Archer": true
+	"Archer": true,
 	"Duelist": false,
 	"Paladin": false,
 	"Ranger": false,

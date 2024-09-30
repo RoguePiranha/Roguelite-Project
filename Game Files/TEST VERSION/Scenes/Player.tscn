@@ -1,19 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dji34oggkb8b1"]
+[gd_scene load_steps=6 format=3 uid="uid://dji34oggkb8b1"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_hldmp"]
 [ext_resource type="SpriteFrames" uid="uid://cwbf715w18oxt" path="res://Animations/Character/Human/Warrior/Animations.tres" id="2_m7hi5"]
-[ext_resource type="Texture2D" uid="uid://svyvx3v301lw" path="res://Assets/Human/BASE/Head (front).png" id="3_h0omb"]
-[ext_resource type="Texture2D" uid="uid://ryg883jt5pwb" path="res://Assets/Human/BASE/Head (front-diag).png" id="4_egc7j"]
-[ext_resource type="Texture2D" uid="uid://drblcwegpv0xf" path="res://Assets/Human/BASE/Head (side).png" id="5_iajwg"]
-[ext_resource type="Texture2D" uid="uid://d16bdroxcw1au" path="res://Assets/Human/BASE/Head (back).png" id="6_ykoho"]
-[ext_resource type="Texture2D" uid="uid://cbdtmwyryrou4" path="res://Assets/Human/BASE/Head (back-diag).png" id="7_uyri3"]
-[ext_resource type="Texture2D" uid="uid://c6g4xpdw6puus" path="res://Assets/Human/BASE/Body(front).png" id="8_4d6xh"]
-[ext_resource type="Texture2D" uid="uid://c01kfqjihgqtg" path="res://Assets/Human/BASE/Body(front-diag).png" id="9_0n0hd"]
-[ext_resource type="Texture2D" uid="uid://r8v4c7i6iek8" path="res://Assets/Human/BASE/Body(side).png" id="10_4ag8w"]
-[ext_resource type="Texture2D" uid="uid://ces2daghite7y" path="res://Assets/Human/BASE/Body(back).png" id="11_d6331"]
-[ext_resource type="Texture2D" uid="uid://bucoksqo81vpt" path="res://Assets/Human/BASE/Body(back-diag).png" id="12_18bm0"]
-[ext_resource type="Texture2D" uid="uid://b283wkfspfttl" path="res://Assets/Human/BASE/HandClean.png" id="13_0quby"]
-[ext_resource type="Texture2D" uid="uid://csru1v5r3l0ie" path="res://Assets/Human/BASE/foot.png" id="14_rteo8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5khq8"]
 size = Vector2(15.5, 55)
@@ -25,27 +13,19 @@ height = 50.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nu4o"]
 size = Vector2(55, 44.5)
 
-[sub_resource type="Animation" id="Animation_oj4cw"]
-resource_name = "walk_down"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jbcbn"]
-_data = {
-"walk_down": SubResource("Animation_oj4cw")
-}
-
 [node name="Player" type="CharacterBody2D"]
 platform_wall_layers = 1
 script = ExtResource("1_hldmp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -18)
+sprite_frames = ExtResource("2_m7hi5")
+animation = &"idle_front"
 
 [node name="wallCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0.500001, 29.75)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_5khq8")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -18)
-sprite_frames = ExtResource("2_m7hi5")
-animation = &"walk_back_diag"
 
 [node name="HeadHitbox" type="CollisionShape2D" parent="."]
 z_index = 2
@@ -56,83 +36,3 @@ shape = SubResource("CapsuleShape2D_qw2n4")
 z_index = 1
 position = Vector2(0.5, -0.25)
 shape = SubResource("RectangleShape2D_3nu4o")
-
-[node name="Head" type="Node2D" parent="."]
-visible = false
-
-[node name="BaseHeadSprite_Front" type="Sprite2D" parent="Head"]
-top_level = true
-position = Vector2(0, -43)
-texture = ExtResource("3_h0omb")
-
-[node name="BaseHeadSprite_Front-Diag" type="Sprite2D" parent="Head"]
-top_level = true
-position = Vector2(0, -43)
-texture = ExtResource("4_egc7j")
-
-[node name="BaseHeadSprite_Side" type="Sprite2D" parent="Head"]
-top_level = true
-position = Vector2(0, -43)
-texture = ExtResource("5_iajwg")
-
-[node name="BaseHeadSprite_Back" type="Sprite2D" parent="Head"]
-top_level = true
-position = Vector2(0, -43)
-texture = ExtResource("6_ykoho")
-
-[node name="BaseHeadSprite_Back-Diag" type="Sprite2D" parent="Head"]
-top_level = true
-position = Vector2(0, -43)
-texture = ExtResource("7_uyri3")
-
-[node name="Body" type="Node2D" parent="."]
-visible = false
-
-[node name="BaseBodySprite_Front" type="Sprite2D" parent="Body"]
-texture = ExtResource("8_4d6xh")
-
-[node name="BaseBodySprite_Front-Diag" type="Sprite2D" parent="Body"]
-visible = false
-texture = ExtResource("9_0n0hd")
-
-[node name="BaseBodySprite_Side" type="Sprite2D" parent="Body"]
-visible = false
-texture = ExtResource("10_4ag8w")
-
-[node name="BaseBodySprite_Back" type="Sprite2D" parent="Body"]
-visible = false
-texture = ExtResource("11_d6331")
-
-[node name="BaseBodySprite_Back-Diag" type="Sprite2D" parent="Body"]
-visible = false
-texture = ExtResource("12_18bm0")
-
-[node name="LeftHand" type="Node2D" parent="."]
-visible = false
-
-[node name="BaseLeftHand" type="Sprite2D" parent="LeftHand"]
-position = Vector2(28, 0)
-texture = ExtResource("13_0quby")
-
-[node name="RightHand" type="Node2D" parent="."]
-visible = false
-
-[node name="BaseRightHand" type="Sprite2D" parent="RightHand"]
-position = Vector2(-28, 0)
-texture = ExtResource("13_0quby")
-
-[node name="Feet" type="Node2D" parent="."]
-visible = false
-
-[node name="BaseFootSprite_Left" type="Sprite2D" parent="Feet"]
-position = Vector2(12, 27)
-texture = ExtResource("14_rteo8")
-
-[node name="BaseFeetSprite_Right" type="Sprite2D" parent="Feet"]
-position = Vector2(-12, 27)
-texture = ExtResource("14_rteo8")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_jbcbn")
-}

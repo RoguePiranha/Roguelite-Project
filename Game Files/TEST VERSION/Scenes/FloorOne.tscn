@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=4 uid="uid://kjf01dicghor"]
+[gd_scene load_steps=8 format=4 uid="uid://kjf01dicghor"]
 
-[ext_resource type="Script" path="res://Scenes/floor_one.gd" id="1_1rdfe"]
+[ext_resource type="Script" path="res://Scripts/Scenes/floor_one.gd" id="1_1rdfe"]
 [ext_resource type="PackedScene" uid="uid://dji34oggkb8b1" path="res://Scenes/Player.tscn" id="2_qmuja"]
 [ext_resource type="TileSet" uid="uid://cytdmikxlhyem" path="res://Assets/Tile Set/ground_tiles.tres" id="3_7jcc8"]
+[ext_resource type="PackedScene" uid="uid://cwbn31sg5asdf" path="res://Scenes/SpawnPoint.tscn" id="4_ak4q4"]
+[ext_resource type="PackedScene" uid="uid://bgkayqtd23wnl" path="res://Scenes/Test_Enemy.tscn" id="5_8p0cf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cafl4"]
 size = Vector2(30000, 30000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7jhu"]
+size = Vector2(1918, 1072)
 
 [node name="FloorOne" type="Node2D"]
 script = ExtResource("1_1rdfe")
@@ -15,13 +20,24 @@ script = ExtResource("1_1rdfe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(15000, 15000)
 shape = SubResource("RectangleShape2D_cafl4")
-
-[node name="Player" parent="Area2D/CollisionShape2D" instance=ExtResource("2_qmuja")]
-position = Vector2(-14921, -14900)
-
-[node name="Camera2D" type="Camera2D" parent="Area2D/CollisionShape2D/Player"]
+disabled = true
 
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAoAAAAAAAIAAAAAAAkAAAAAAAIAAAAAAAgAAAAAAAIAAAAAAAcAAAAAAAIAAAAAAAYAAAAAAAIAAAAAAAUAAAAAAAIAAAAAAAQAAAAAAAIAAAAAAAMAAAAAAAIAAAAAAAIAAAAAAAIAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAIAAAABAAAAAAAAAAIAAAACAAAAAAAAAAIAAAADAAAAAAAAAAIAAAAEAAAAAAAAAAIAAAAFAAAAAAAAAAIAAAAGAAAAAAAAAAIAAAAHAAAAAAAAAAIAAAAIAAAAAAAAAAIAAAAJAAAAAAAAAAIAAAAKAAAAAAAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAoAAAAAAAIAAAAAAAkAAAAAAAIAAAAAAAgAAAAAAAIAAAAAAAcAAAAAAAIAAAAAAAYAAAAAAAIAAAAAAAUAAAAAAAIAAAAAAAQAAAAAAAIAAAAAAAMAAAAAAAIAAAAAAAIAAAAAAAIAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAIAAAABAAAAAAAAAAIAAAACAAAAAAAAAAIAAAADAAAAAAAAAAIAAAAEAAAAAAAAAAIAAAAFAAAAAAAAAAIAAAAGAAAAAAAAAAIAAAAHAAAAAAAAAAIAAAAIAAAAAAAAAAIAAAAJAAAAAAAAAAIAAAAKAAAAAAAAAAIAAAAAAEoHAAAAAAIAAAAAAEsHAAAAAAIAAAAAAEwHAAAAAAIAAAAAAE0HAAAAAAIAAAAAAE4HAAAAAAIAAAAAAE8HAAAAAAIAAAAAAFAHAAAAAAIAAAAAAFEHAAAAAAIAAAAAAFIHAAAAAAIAAAABAFIHAAAAAAIAAAACAFIHAAAAAAIAAAADAFIHAAAAAAIAAAAEAFIHAAAAAAIAAAAFAFIHAAAAAAIAAAAGAFIHAAAAAAIAAAAHAFIHAAAAAAIAAAAIAFIHAAAAAAIAAABSB0kHAAAAAAIAAABSB0oHAAAAAAIAAABSB0sHAAAAAAIAAABSB0wHAAAAAAIAAABSB00HAAAAAAIAAABSB04HAAAAAAIAAABSB08HAAAAAAIAAABSB1AHAAAAAAIAAABSB1EHAAAAAAIAAABSB1IHAAAAAAIAAABKB1IHAAAAAAIAAABLB1IHAAAAAAIAAABMB1IHAAAAAAIAAABNB1IHAAAAAAIAAABOB1IHAAAAAAIAAABPB1IHAAAAAAIAAABQB1IHAAAAAAIAAABRB1IHAAAAAAIAAABLBwAAAAAAAAIAAABMBwAAAAAAAAIAAABNBwAAAAAAAAIAAABOBwAAAAAAAAIAAABPBwAAAAAAAAIAAABQBwAAAAAAAAIAAABRBwAAAAAAAAIAAABSBwAAAAAAAAIAAABSBwEAAAAAAAIAAABSBwIAAAAAAAIAAABSBwMAAAAAAAIAAABSBwQAAAAAAAIAAABSBwUAAAAAAAIAAABSBwYAAAAAAAIAAABSBwcAAAAAAAIAAAA=")
 tile_set = ExtResource("3_7jcc8")
+
+[node name="SpawnPoint" parent="." instance=ExtResource("4_ak4q4")]
+position = Vector2(754, 461)
+enemy_scene = ExtResource("5_8p0cf")
+
+[node name="Player" parent="." instance=ExtResource("2_qmuja")]
+position = Vector2(79, 100)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="PatrolArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PatrolArea"]
+position = Vector2(959, 536)
+shape = SubResource("RectangleShape2D_o7jhu")
