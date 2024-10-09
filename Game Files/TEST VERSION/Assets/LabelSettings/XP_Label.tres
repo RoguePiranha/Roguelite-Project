@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cmolbfnf8wa56"]
+
+[ext_resource type="FontFile" uid="uid://ch1f4c4cvs1uw" path="res://Fonts/FiraCode-Regular.ttf" id="1_15dru"]
+
+[resource]
+font = ExtResource("1_15dru")
+font_size = 20
+font_color = Color(0.156863, 0.737255, 0.0666667, 1)

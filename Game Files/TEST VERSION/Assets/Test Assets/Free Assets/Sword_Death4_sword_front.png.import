@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4mvt10ltnuia"
-path="res://.godot/imported/Sword_Death4_sword_front.png-48da7bc51633b30756e7127814878eb1.ctex"
+path="res://.godot/imported/Sword_Death4_sword_front.png-8e13cb49f4ced2796e80afba7c450489.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test Assets/Sword_Death4_sword_front.png"
-dest_files=["res://.godot/imported/Sword_Death4_sword_front.png-48da7bc51633b30756e7127814878eb1.ctex"]
+source_file="res://Assets/Test Assets/Free Assets/Sword_Death4_sword_front.png"
+dest_files=["res://.godot/imported/Sword_Death4_sword_front.png-8e13cb49f4ced2796e80afba7c450489.ctex"]
 
 [params]
 

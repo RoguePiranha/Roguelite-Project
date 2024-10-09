@@ -1,0 +1,186 @@
+[gd_scene load_steps=12 format=3 uid="uid://bghuu1uwx5h5j"]
+
+[ext_resource type="LabelSettings" uid="uid://6a8ty4ieh617" path="res://Assets/LabelSettings/HP_Label.tres" id="1_swej0"]
+[ext_resource type="LabelSettings" uid="uid://cj2nogx4w6ft6" path="res://Assets/LabelSettings/MP_Label.tres" id="2_t5v7q"]
+[ext_resource type="LabelSettings" uid="uid://cmolbfnf8wa56" path="res://Assets/LabelSettings/XP_Label.tres" id="3_7l8m3"]
+[ext_resource type="Texture2D" uid="uid://k053v8rh5a1c" path="res://Assets/Tile Set/Inventory/inventorySlot.png" id="4_2mk85"]
+[ext_resource type="LabelSettings" uid="uid://dfr665dtxuhfj" path="res://Assets/LabelSettings/inventory_label_settings.tres" id="5_ojc0p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ia78r"]
+bg_color = Color(0.740897, 0, 0.162201, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.744048, 0.429754, 0, 1)
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpfrl"]
+bg_color = Color(0.744048, 0.429754, 0, 1)
+border_color = Color(0.744048, 0.429754, 0, 1)
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2k2k"]
+bg_color = Color(0.192157, 0.129412, 0.8, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.744048, 0.429754, 0, 1)
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvovb"]
+bg_color = Color(0.744048, 0.429754, 0, 1)
+border_color = Color(0.744048, 0.429754, 0, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nttj3"]
+bg_color = Color(0.129412, 0.580392, 0.239216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.744048, 0.429754, 0, 1)
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahcei"]
+bg_color = Color(0.744048, 0.429754, 0, 1)
+corner_radius_top_left = 6
+corner_radius_bottom_left = 6
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 40
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ActiveItems" type="HBoxContainer" parent="MarginContainer/Control"]
+layout_mode = 0
+offset_left = 1472.0
+offset_top = 897.0
+offset_right = 2068.0
+offset_bottom = 1093.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Slot1" type="TextureRect" parent="MarginContainer/Control/ActiveItems"]
+layout_mode = 2
+texture = ExtResource("4_2mk85")
+
+[node name="Label" type="Label" parent="MarginContainer/Control/ActiveItems/Slot1"]
+layout_mode = 0
+offset_left = 74.3516
+offset_top = 155.673
+offset_right = 114.352
+offset_bottom = 205.673
+text = "1"
+label_settings = ExtResource("5_ojc0p")
+horizontal_alignment = 1
+
+[node name="Slot2" type="TextureRect" parent="MarginContainer/Control/ActiveItems"]
+layout_mode = 2
+texture = ExtResource("4_2mk85")
+
+[node name="Label2" type="Label" parent="MarginContainer/Control/ActiveItems/Slot2"]
+layout_mode = 0
+offset_left = 78.8184
+offset_top = 155.673
+offset_right = 118.818
+offset_bottom = 205.673
+text = "2"
+label_settings = ExtResource("5_ojc0p")
+horizontal_alignment = 1
+
+[node name="Slot3" type="TextureRect" parent="MarginContainer/Control/ActiveItems"]
+layout_mode = 2
+texture = ExtResource("4_2mk85")
+
+[node name="Label3" type="Label" parent="MarginContainer/Control/ActiveItems/Slot3"]
+layout_mode = 0
+offset_left = 83.285
+offset_top = 155.673
+offset_right = 123.285
+offset_bottom = 205.673
+text = "3"
+label_settings = ExtResource("5_ojc0p")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control"]
+layout_mode = 1
+offset_right = 360.0
+offset_bottom = 86.0
+
+[node name="HPBar" type="ProgressBar" parent="MarginContainer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_ia78r")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="MarginContainer/Control/VBoxContainer/HPBar"]
+layout_mode = 0
+offset_left = -39.0
+offset_right = 1.0
+offset_bottom = 26.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_bpfrl")
+text = "HP"
+label_settings = ExtResource("1_swej0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MPBar" type="ProgressBar" parent="MarginContainer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_d2k2k")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label2" type="Label" parent="MarginContainer/Control/VBoxContainer/MPBar"]
+layout_mode = 0
+offset_left = -39.0
+offset_right = 1.0
+offset_bottom = 26.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_uvovb")
+text = "MP"
+label_settings = ExtResource("2_t5v7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XPBar" type="ProgressBar" parent="MarginContainer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_nttj3")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label2" type="Label" parent="MarginContainer/Control/VBoxContainer/XPBar"]
+layout_mode = 0
+offset_left = -39.0
+offset_right = 1.0
+offset_bottom = 26.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ahcei")
+text = "XP"
+label_settings = ExtResource("3_7l8m3")
+horizontal_alignment = 1
+vertical_alignment = 1

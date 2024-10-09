@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://ubxc10d5g0k6"]
+
+[ext_resource type="Texture2D" uid="uid://clhk4r3havsg5" path="res://Assets/Test Assets/Solaria Assets/Sprite/New/16x16/Base/Base PNG/Base Character PNG/Base Attack (One Hand Weapons).png" id="1_gkdo4"]
+[ext_resource type="Texture2D" uid="uid://dxltfcbnptb5" path="res://Assets/Test Assets/cleaver.png" id="2_5bqwb"]
+
+[sub_resource type="Animation" id="Animation_dv6o3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("weaponSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-2.82743]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("weaponSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7.66666, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_t7q4e"]
+resource_name = "attack_back"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 4, 5, 6, 8]
+}
+
+[sub_resource type="Animation" id="Animation_3axyl"]
+resource_name = "attack_front"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BodySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("weaponSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-2.82743, -3.10669, -3.21141, 0.923279, 1.213, 1.56207, -0.190241, -1.14319, -2.61799]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("weaponSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(7.66666, -2), Vector2(6.66666, -3.66667), Vector2(5.66666, -5.33333), Vector2(-9.66666, 12.6667), Vector2(-12.3333, 11.3333), Vector2(-12, 6.33333), Vector2(1, 13), Vector2(9.66666, 10), Vector2(9, -0.66667)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmbqs"]
+_data = {
+"RESET": SubResource("Animation_dv6o3"),
+"attack_back": SubResource("Animation_t7q4e"),
+"attack_front": SubResource("Animation_3axyl")
+}
+
+[node name="Tutorial Body" type="CharacterBody2D"]
+position = Vector2(949, 515)
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="BodySprite" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_gkdo4")
+hframes = 9
+vframes = 4
+
+[node name="weaponSprite" type="Sprite2D" parent="Sprites"]
+visible = false
+position = Vector2(7.66666, -2)
+rotation = -2.82743
+texture = ExtResource("2_5bqwb")
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprites"]
+libraries = {
+"": SubResource("AnimationLibrary_kmbqs")
+}
+autoplay = "attack_front"
